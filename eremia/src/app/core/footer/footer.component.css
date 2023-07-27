@@ -1,0 +1,50 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 2, 2, 0.8);
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 7px;
+    padding-top: 7px;
+
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+strong {
+    
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+}
+
+/* footer p {
+    font-weight: lighter;
+    font: italic;
+    font-size: small;
+    margin-bottom: 7px;
+} */
+
+footer a {
+    margin-right: 10px;
+    padding-top: 10px;
+}
+.footer-contacts {
+    padding-top: 5px;
+    margin-top: 5px;
+}
+.fa-solid fa-phone::before {
+    content: "\f095";
+    padding-right: 10px;
+    /* color: white; */
+}
+.fa-regular fa-envelope::before{
+    content: "\f0e0";
+}

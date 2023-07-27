@@ -1,0 +1,40 @@
+.logo {
+    /* background-image: url('/public/images/logo_red.PNG'); */
+    width: 70px; 
+    height: 60px; 
+   /* align-content: center; */
+    /* background-color: rgba(255, 2, 2, 0.8); */
+    /* flex:content; */
+    cursor: pointer;
+
+  }
+
+.logo-container{
+    /* margin-left: 50%; */
+     width: 50px;
+    height: 50px;
+    background-color: rgba(255, 2, 2, 0.8); 
+    /* align-content: center; */
+}
+
+nav {
+    width: 100%;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 2, 2, 0.8);
+}
+nav ul {
+    flex: 5;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+    color: #fdfdfd;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
