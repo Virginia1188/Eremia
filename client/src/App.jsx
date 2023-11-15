@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Studios from './components/Studios';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         {/* <Route path='/' element={Home} /> */}
         {/* <Route path='/' element={Home} /> */}
       </Routes>
+      <Footer />
     </div>
   )
 }
