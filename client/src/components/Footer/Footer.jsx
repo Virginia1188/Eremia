@@ -1,21 +1,22 @@
 
+import styles from './Footer.module.css'
 
 export default function Footer() {
 
     return (
-        <div className="container-fluid footer bg-light py-5" style={{marginTop: 90}}>
+        <div className= 'container-fluid footer bg-light py-5' style={{marginTop: 90}}>
             <div className="container text-center py-5">
-                <div className="row">
+                <div className={styles.row}>
                     <div className="col-12 mb-4">
                         <a href="index.html" className="navbar-brand m-0">
-                            <h1 className="m-0 mt-n2 display-4 text-primary"><span className="text-secondary"></span>Еремия</h1>
+                            <h1 className="m-0 mt-n2 display-4 text-primary"><div className={styles.footerTitle}>Еремия</div></h1>
                         </a>
                     </div>
                     <div className="col-12 mb-4">
-                        <a className="btn btn-outline-secondary btn-social mr-2" href="#"><i className="fab fa-twitter"></i></a>
-                        <a className="btn btn-outline-secondary btn-social mr-2" href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a className="btn btn-outline-secondary btn-social mr-2" href="#"><i className="fab fa-linkedin-in"></i></a>
-                        <a className="btn btn-outline-secondary btn-social" href="#"><i className="fab fa-instagram"></i></a>
+                        <a className={`${styles.socials} btn btn-outline-secondary btn-social mr-2"`} href="#"><i className='fab fa-facebook-f'></i></a>
+                        <a className={`${styles.socials} btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-linkedin-in"></i></a>
+                        <a className={`${styles.socials} btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-twitter"></i></a>
+                        <a className={`${styles.socials} btn btn-outline-secondary btn-social`} href="#"><i className="fab fa-instagram"></i></a>
                     </div>
                     <div className="col-12 mt-2 mb-4">
                         <div className="row">
