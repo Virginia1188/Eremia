@@ -594,6 +594,7 @@ pre code {
   overflow-y: scroll;
 }
 
+
 .container,
 .container-fluid,
 .container-sm,
@@ -605,6 +606,11 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.container {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 @media (min-width: 576px) {
@@ -2698,14 +2704,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-  color: #62C3E7;
-  border-color: #62C3E7;
+  color: #f30808;
+  border-color: #f30808;
 }
 
 .btn-outline-secondary:hover {
-  color: #212529;
-  background-color: #62C3E7;
-  border-color: #62C3E7;
+  color: white;
+  background-color: #f30808;
+  border-color: white;
 }
 
 .btn-outline-secondary:focus, .btn-outline-secondary.focus {
