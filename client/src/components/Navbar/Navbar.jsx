@@ -15,7 +15,7 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div className="navbar-nav ml-auto py-0">
                             <Link to="/studios" className="nav-item nav-link active">Зали</Link>
-                            <Link to="/shedule" className="nav-item nav-link">График</Link>
+                            <Link to="/schedule" className="nav-item nav-link">График</Link>
                             <Link to="/about" className="nav-item nav-link">За Нас</Link>
                         </div>
                         <Link to="/" className="navbar-brand mx-5 d-none d-lg-block">
