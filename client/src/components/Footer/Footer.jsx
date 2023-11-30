@@ -13,10 +13,10 @@ export default function Footer() {
                         </a>
                     </div>
                     <div className="col-12 mb-4">
-                        <a className={` btn btn-outline-secondary btn-social mr-2 ${styles.socials}`} href="#"><i className='fab fa-facebook-f'></i></a>
-                        <a className={`${styles.socials} btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-linkedin-in"></i></a>
-                        <a className={`${styles.socials} btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-twitter"></i></a>
-                        <a className={`${styles.socials} btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-instagram"></i></a>
+                        <a className={`btn btn-outline-secondary btn-social mr-2`} href="#"><i className='fab fa-facebook-f'></i></a>
+                        <a className={`btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-linkedin-in"></i></a>
+                        <a className={`btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-twitter"></i></a>
+                        <a className={`$btn btn-outline-secondary btn-social mr-2`} href="#"><i className="fab fa-instagram"></i></a>
                     </div>
                     <div className="col-12 mt-2 mb-4">
                         <div className="row">

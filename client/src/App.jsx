@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Topbar from './components/Topbar';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import Studios from './components/Studios';
+import Topbar from './components/Topbar/Topbar';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Studios from './components/Studios/Studios';
 import Footer from './components/Footer/Footer';
 
 function App() {

@@ -5,17 +5,17 @@ export default function Home() {
         <div id="header-carousel" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img className="w-100" src="public/img/carousel-1.jpg" alt="Image"/>
+                    <img className="w-100" src="public/img/eremia_home1.jpg" alt="Image"/>
                     <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div className="p-3" style={{maxWidth: 900}}>
-                            <h4 className="text-white text-uppercase mb-md-3">Traditional & Delicious</h4>
-                            <h1 className="display-3 text-white mb-md-4">Traditional Ice Cream Since 1950</h1>
-                            <a href="" className="btn btn-primary py-md-3 px-md-5 mt-2">Learn More</a>
+                            <h4 className="text-white text-uppercase mb-md-3">Над 1000 танциори</h4>
+                            <h1 className="display-3 text-white mb-md-4">Най-веселото хоро в София</h1>
+                            <a href="/studios" className="btn btn-primary py-md-3 px-md-5 mt-2">нашите зали</a>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img className="w-100" src="public/img/carousel-2.jpg" alt="Image"/>
+                    <img className="w-100" src="public/img/eremia-albania9.jpg" alt="Image"/>
                     <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div className="p-3" style={{maxWidth: 900}}>
                             <h4 className="text-white text-uppercase mb-md-3">Traditional & Delicious</h4>
