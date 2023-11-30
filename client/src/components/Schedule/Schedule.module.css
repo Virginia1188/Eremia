@@ -4,7 +4,7 @@
 }
 
 .title:first-child{
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .schedule {
@@ -14,9 +14,7 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    text-align: center;
     
 }
 
-.table {
-    /* align-items: center; */
-}

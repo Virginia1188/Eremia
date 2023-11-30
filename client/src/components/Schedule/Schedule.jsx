@@ -6,7 +6,7 @@ export default function Schedule() {
         <div className={styles.schedule}>
             <div>
                 <h4 className={styles.title}>Зала Младост</h4>
-                <Table responsive="sm" className={styles.table}>
+                <Table responsive="sm" >
                     <thead>
                         <tr>
                             <th>Час/Ден</th>
@@ -28,7 +28,7 @@ export default function Schedule() {
 
                         </tr>
                         <tr>
-                            <td>19.40ч</td>
+                            <td>19.45ч</td>
                             <td>Розови</td>
                             <td>Жълти</td>
                             <td>Розови</td>
@@ -36,15 +36,7 @@ export default function Schedule() {
                             <td>Жълти</td>
 
                         </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
 
-                        </tr>
                     </tbody>
                 </Table>
             </div>
@@ -64,29 +56,20 @@ export default function Schedule() {
                     <tbody>
                         <tr>
                             <td>18.30ч</td>
-                            <td>Червени</td>
-                            <td>Зелени</td>
-                            <td>Зелени</td>
-                            <td>Червени</td>
-                            <td>Зелени</td>
+                            <td>Сини</td>
+                            <td>Оранжеви</td>
+                            <td>Сини</td>
+                            <td>Оранжеви</td>
+                            <td>Лилави</td>
 
                         </tr>
                         <tr>
-                            <td>19.40ч</td>
-                            <td>Розови</td>
+                            <td>19.45ч</td>
                             <td>Жълти</td>
-                            <td>Розови</td>
+                            <td>Лилави</td>
+                            <td>Червени</td>
                             <td>Жълти</td>
-                            <td>Жълти</td>
-
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
+                            <td>Червени</td>
 
                         </tr>
                     </tbody>
@@ -108,30 +91,30 @@ export default function Schedule() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>18.30ч</td>
+                            <td>18:30ч</td>
+                            <td>-</td>
                             <td>Червени</td>
-                            <td>Зелени</td>
-                            <td>Зелени</td>
+                            <td>-</td>
                             <td>Червени</td>
-                            <td>Зелени</td>
+                            <td>-</td>
 
                         </tr>
                         <tr>
-                            <td>19.40ч</td>
-                            <td>Розови</td>
-                            <td>Жълти</td>
-                            <td>Розови</td>
-                            <td>Жълти</td>
-                            <td>Жълти</td>
+                            <td>18:45ч</td>
+                            <td>Шарени</td>
+                            <td>-</td>
+                            <td>Шарени</td>
+                            <td>-</td>
+                            <td>Шарени</td>
 
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
+                            <td>20:00ч</td>
+                            <td>Лилави</td>
+                            <td>-</td>
+                            <td>Лилави</td>
+                            <td>-</td>
+                            <td>-</td>
 
                         </tr>
                     </tbody>
@@ -139,7 +122,7 @@ export default function Schedule() {
             </div>
 
             <div>
-                <h4 className={styles.title}>Зала Люлин</h4>
+                <h4 className={styles.title}>Зала Люлин ет.2</h4>
                 <Table responsive="sm">
                     <thead>
                         <tr>
@@ -154,31 +137,23 @@ export default function Schedule() {
                     <tbody>
                         <tr>
                             <td>18.30ч</td>
+                            <td>Сини</td>
+                            <td>Лилави</td>
                             <td>Червени</td>
-                            <td>Зелени</td>
-                            <td>Зелени</td>
+                            <td>Сини</td>
                             <td>Червени</td>
-                            <td>Зелени</td>
 
                         </tr>
                         <tr>
-                            <td>19.40ч</td>
-                            <td>Розови</td>
+                            <td>19.45ч</td>
                             <td>Жълти</td>
                             <td>Розови</td>
                             <td>Жълти</td>
-                            <td>Жълти</td>
+                            <td>Лилави</td>
+                            <td>Розови</td>
 
                         </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-
-                        </tr>
+        
                     </tbody>
                 </Table>
             </div>
@@ -198,31 +173,23 @@ export default function Schedule() {
                     <tbody>
                         <tr>
                             <td>18.30ч</td>
-                            <td>Червени</td>
+                            <td>Сини</td>
                             <td>Зелени</td>
+                            <td>Сини</td>
                             <td>Зелени</td>
-                            <td>Червени</td>
-                            <td>Зелени</td>
+                            <td>Сини</td>
 
                         </tr>
                         <tr>
                             <td>19.40ч</td>
-                            <td>Розови</td>
-                            <td>Жълти</td>
-                            <td>Розови</td>
-                            <td>Жълти</td>
-                            <td>Жълти</td>
+                            <td>Червени</td>
+                            <td>Оранжеви</td>
+                            <td>Червени</td>
+                            <td>-</td>
+                            <td>Оранжеви</td>
 
                         </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
 
-                        </tr>
                     </tbody>
                 </Table>
             </div>
@@ -244,30 +211,22 @@ export default function Schedule() {
                         <tr>
                             <td>18.30ч</td>
                             <td>Червени</td>
-                            <td>Зелени</td>
-                            <td>Зелени</td>
+                            <td>-</td>
                             <td>Червени</td>
-                            <td>Зелени</td>
+                            <td>-</td>
+                            <td>-</td>
 
                         </tr>
                         <tr>
-                            <td>19.40ч</td>
+                            <td>19.45ч</td>
                             <td>Розови</td>
-                            <td>Жълти</td>
+                            <td>-</td>
                             <td>Розови</td>
-                            <td>Жълти</td>
-                            <td>Жълти</td>
+                            <td>-</td>
+                            <td>-</td>
 
                         </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
 
-                        </tr>
                     </tbody>
                 </Table>
             </div>
