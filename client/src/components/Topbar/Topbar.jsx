@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Topbar() {
     return (
         <div>
@@ -6,9 +8,9 @@ export default function Topbar() {
                     <div className="row">
                         <div className="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                             <div className="d-inline-flex align-items-center">
-                            <a className="text-white pr-3" href="">Регистрация</a>
+                            <Link className="text-white pr-3" to="/register">Регистрация</Link>
                                 <span className="text-white">|</span>
-                                <a className="text-white px-3" href="">Вход</a>
+                                <Link className="text-white px-3" to="/login">Вход</Link>
                                 <a className="text-white pr-3" href="">Моята Зала</a>
                                 <span className="text-white">|</span>
                                 <a className="text-white px-3" href="">Любими</a>

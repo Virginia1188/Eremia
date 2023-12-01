@@ -10,7 +10,7 @@
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #dc3545;
+  --red: #dc0000;
   --orange: #fd7e14;
   --yellow: #ffc107;
   --green: #28a745;
@@ -19,7 +19,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #f30808;
+  --primary: #dc0000;
   --secondary: #62C3E7;
   --success: #28a745;
   --info: #17a2b8;
@@ -6361,7 +6361,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #f30808 !important;
+  background-color: #dc0000 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -9531,7 +9531,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #f30808 !important;  
+  color: #dc0000 !important;  
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -9787,7 +9787,7 @@ h6,
   height: 50%;
   top: 0;
   left: 0;
-  background: #f30808;
+  background: #dc0000;
 }
 
 .navbar-light .navbar-nav .nav-link {
