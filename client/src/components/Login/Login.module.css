@@ -1,0 +1,114 @@
+@import url("https://code.jquery.com/jquery-3.2.1.min.js");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js");
+
+body{
+    background-color: #dee9ff;
+}
+
+.registrationForm{
+	padding: 50px 0;
+    font-family: 'monotype corsiva';
+}
+
+.registrationForm form{
+    background-color: #fff;
+    max-width: 600px;
+    margin: auto;
+    padding: 50px 70px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.formIcon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formIcon h5{
+    font-size: 1.5em;
+}
+
+.registrationForm .formIcon img{
+	text-align: center;
+    /* background-color: #5891ff; */
+    /* align-items: center; */
+    /* border-radius: 50%; */
+    /* font-size: 20px; */
+    color: white;
+    width: 250px;
+    height: 200px;
+    /* margin: auto; */
+    margin-bottom: 15px;
+    
+    margin-top: 0;
+    /* line-height: 100px; */
+}
+
+.registrationForm .item{
+	border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+}
+
+.registrationForm .createAccount{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to top right,   #fa92b5, #df68c3, #81c2eb, #5ccddf, #53ca93, #d3e597, #ffe970, #f9b48e, rgb(241, 58, 82));
+    color: black;
+    margin-top: 20px;
+}
+
+.registrationForm .socialMedia{
+    max-width: 600px;
+    background-color: #fff;
+    margin: auto;
+    padding: 35px 0;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: #9fadca;
+    border-top: 1px solid #dee9ff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.registrationForm .socialIcons{
+    margin-top: 30px;
+    margin-bottom: 16px;
+}
+
+.registrationForm .socialIcons a{
+    font-size: 20px;
+    margin: 0 3px;
+    color: black;
+    background: linear-gradient(to top right,   #fa92b5, #df68c3, #81c2eb, #5ccddf, #53ca93, #d3e597, #ffe970, #f9b48e, rgb(241, 58, 82));
+    /* border: 3px solid;
+    border-radius: 5px; */
+    width: 120px;
+    display: inline-block;
+    border-radius: 15px;
+    height: 35px;
+    text-align: center;
+    /* background-color: #fff; */
+    /* line-height: 45px; */
+}
+
+.registrationForm .socialIcons a:hover{
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+@media (max-width: 576px) {
+    .registrationForm form{
+        padding: 50px 20px;
+    }
+
+    .registrationForm .formIcon{
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        line-height: 70px;
+    }
+}

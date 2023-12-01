@@ -8,6 +8,7 @@ import Studios from './components/Studios/Studios';
 import Footer from './components/Footer/Footer';
 import Schedule from './components/Schedule/Schedule';
 import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <Route path='/studios' element={<Studios />} />
         <Route path='/schedule' element={<Schedule/>} />
         <Route path='/register' element={<Register/>} />
-        {/* <Route path='/' element={Home} /> */}
+        <Route path='/login' element={<Login/>} />
       </Routes>
       <Footer />
     </div>
