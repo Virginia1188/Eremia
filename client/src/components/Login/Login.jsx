@@ -1,8 +1,8 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 
 import styles from './Login.module.css';
 import useForm from '../../hooks/useForm';
-import AuthContect from '../../tontext'
+import AuthContext from '../../contexts/authContext';
 
 
 const LoginFormKeys = {
@@ -12,9 +12,9 @@ const LoginFormKeys = {
 
 
 export default function Login() {
-    const {loginSubmitHandler} = useContext()
+    const { loginSubmitHandler } = useContext(AuthContext);
 
-    const {values, onChange} = useForm(loginSubmitHandler, {
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     })
@@ -22,23 +22,39 @@ export default function Login() {
     return (
 
         <div className={styles.registrationForm}>
-            
+
             {/* <script src="assets/js/script.js"></script> */}
-            <form>
-               
+            <form onSubmit={onSubmit}>
+
                 <div className={styles.formIcon}>
-                   <img src="public/img/logo_red.png" alt="logo" />
-                   <h5>Влез в своя профил</h5>
+                    <img src="public/img/logo_red.png" alt="logo" />
+                    <h5>Влез в своя профил</h5>
                 </div>
                 <div className={styles.formGroup}>
-                    <input type="text" className="form-control item" id="username" placeholder="Потребителско име" />
+                    <input
+                        type="text"
+                        className="form-control item"
+                        id="username"
+                        name={LoginFormKeys.Email}
+                        placeholder="Потребителско име"
+                        onChange={onChange}
+                        value={values.email}
+                    />
                 </div>
                 <div className={styles.formGroup}>
-                    <input type="password" className="form-control item" id="password" placeholder="Парола" />
+                    <input
+                        type="password"
+                        className="form-control item"
+                        id="password"
+                        name={LoginFormKeys.Password}
+                        placeholder="Парола"
+                        onChange={onChange}
+                        value={values.password}
+                    />
                 </div>
-               
+
                 <div className={styles.formGroup}>
-                    <button type="button" className={[ styles.createAccount]}>Вход</button>
+                    <button type="submit" className={[styles.createAccount]}>Вход</button>
                 </div>
             </form>
             <div className={styles.socialMedia}>
