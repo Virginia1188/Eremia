@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";
+import Path from "../../paths";
 
 export default function Topbar() {
 
@@ -18,21 +19,21 @@ export default function Topbar() {
 
                                 {!isAuthenticated && (
                                     <div>
-                                        <Link className="text-white pr-3" to="/register">Регистрация</Link>
+                                        <Link className="text-white pr-3" to={Path.Register}>Регистрация</Link>
                                         <span className="text-white">|</span>
-                                        <Link className="text-white px-3" to="/login">Вход</Link>
+                                        <Link className="text-white px-3" to={Path.Login}>Вход</Link>
                                     </div>
                                 )}
 
                                 {isAuthenticated && (
                                     <div>
-                                        <Link className="text-white pr-3" href="">Моята Зала</Link>
+                                        <Link className="text-white pr-3" to={Path}>Моята Зала</Link>
                                         <span className="text-white">|</span>
-                                        <Link className="text-white px-3" href="">Любими</Link>
+                                        <Link className="text-white px-3" to={Path}>Любими</Link>
                                         <span className="text-white">|</span>
-                                        <Link className="text-white px-3" href="">Профил</Link>
+                                        <Link className="text-white px-3" to={Path}>Профил</Link>
                                         <span className="text-white">|</span>
-                                        <Link className="text-white pl-3" href="">Изход</Link>
+                                        <Link className="text-white pl-3" to={Path.Logout}>Изход</Link>
                                     </div>
                                 )}
 
