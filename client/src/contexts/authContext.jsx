@@ -29,10 +29,25 @@ export const AuthProvider = ({
     }
 
 
+    const registerSubmitHandler = async (values) => {
+        const result = authService.register(
+            values.email,
+            values.name,
+            values.surname,
+            values.password,
+            values.studio,
+            values.group,);
+
+        setAuth(result);
+        localStorage.setItem('accessToken', result.accessToken);
+        navigate(Path.Home);
+    }
+
 
     const values = {
         loginSubmitHandler,
         logoutHandler,
+        registerSubmitHandler,
         username: auth.username || auth.email,
         email: auth.email,
         userId: auth._id,

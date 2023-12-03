@@ -1,36 +1,109 @@
+import { useContext } from 'react';
+
 import styles from './Register.module.css';
+
+import AuthContext from '../../contexts/authContext';
+import useForm from '../../hooks/useForm';
 
 
 export default function Register() {
+
+    const registerFormKeys = {
+        Email: 'email',
+        Name: 'name',
+        Surname: 'surname',
+        Password: 'password',
+        Studio: 'studio',
+        Group: 'group'
+    }
+
+    const {registerSubmitHandler} = useContext(AuthContext);
+
+    const {values, onChange, onSubmit} = useForm(registerSubmitHandler, {
+        [registerFormKeys.Email]: '',
+        [registerFormKeys.Name]: '',
+        [registerFormKeys.Surname]: '',
+        [registerFormKeys.Password]: '',
+        [registerFormKeys.Studio]: '',
+        [registerFormKeys.Group]: '',
+    })
 
     return (
 
         <div className={styles.registrationForm}>
             
             {/* <script src="assets/js/script.js"></script> */}
-            <form>
+            <form onSubmit={onSubmit}>
                
                 <div className={styles.formIcon}>
                    <img src="public/img/logo_red.png" alt="logo" />
-                   <h5>Стани част от семйството на Еремия</h5>
+                   <h5>Стани част от семейството на Еремия</h5>
                 </div>
                 <div className={styles.formGroup}>
-                    <input type="text" className="form-control item" id="username" placeholder="Username" />
+                    <input type="text" 
+                    className="form-control item" 
+                    id="email" 
+                    placeholder="Имейл"
+                    name="email"
+                    onChange={onChange}
+                    values={values[registerFormKeys.Email]} 
+                    />
                 </div>
                 <div className={styles.formGroup}>
-                    <input type="password" className="form-control item" id="password" placeholder="Password" />
+                    <input type="text" 
+                    className="form-control item" 
+                    id="name" 
+                    placeholder="Име" 
+                    name="name"
+                    onChange={onChange}
+                    values={values[registerFormKeys.Name]}
+                    />
                 </div>
                 <div className={styles.formGroup}>
-                    <input type="text" className="form-control item" id="email" placeholder="Email" />
+                    <input type="text" 
+                    className="form-control item" 
+                    id="surname" 
+                    placeholder="Фамилия" 
+                    name="surname"
+                    onChange={onChange}
+                    values={values[registerFormKeys.Surname]}
+                    />
                 </div>
                 <div className={styles.formGroup}>
-                    <input type="text" className="form-control item" id="phone-number" placeholder="Phone Number" />
+                    <input type="password" 
+                    className="form-control item" 
+                    id="password" 
+                    placeholder="Парола" 
+                    name="password"
+                    onChange={onChange}
+                    values={values[registerFormKeys.Password]}
+                    />
                 </div>
                 <div className={styles.formGroup}>
+                    <input type="text" 
+                    className="form-control item" 
+                    id="studio" 
+                    placeholder="Зала" 
+                    name="studio"
+                    onChange={onChange}
+                    values={values[registerFormKeys.Studio]}
+                    />
+                </div>
+                <div className={styles.formGroup}>
+                    <input type="text" 
+                    className="form-control item" 
+                    id="group" 
+                    placeholder="Група" 
+                    name="group"
+                    onChange={onChange}
+                    values={values[registerFormKeys.Group]}
+                    />
+                </div>
+                {/* <div className={styles.formGroup}>
                     <input type="text" className="form-control item" id="birth-date" placeholder="Birth Date" />
-                </div>
+                </div> */}
                 <div className={styles.formGroup}>
-                    <button type="button" className={[ styles.createAccount]}>Create Account</button>
+                    <button type="submit" className={[ styles.createAccount]}>Регистрация</button>
                 </div>
             </form>
             <div className={styles.socialMedia}>
