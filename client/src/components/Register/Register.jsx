@@ -10,9 +10,9 @@ export default function Register() {
 
     const registerFormKeys = {
         Email: 'email',
+        Password: 'password',
         Name: 'name',
         Surname: 'surname',
-        Password: 'password',
         Studio: 'studio',
         Group: 'group'
     }
@@ -21,9 +21,9 @@ export default function Register() {
 
     const {values, onChange, onSubmit} = useForm(registerSubmitHandler, {
         [registerFormKeys.Email]: '',
+        [registerFormKeys.Password]: '',
         [registerFormKeys.Name]: '',
         [registerFormKeys.Surname]: '',
-        [registerFormKeys.Password]: '',
         [registerFormKeys.Studio]: '',
         [registerFormKeys.Group]: '',
     })
@@ -50,6 +50,16 @@ export default function Register() {
                     />
                 </div>
                 <div className={styles.formGroup}>
+                    <input type="password" 
+                    className="form-control item" 
+                    id="password" 
+                    placeholder="Парола" 
+                    name="password"
+                    onChange={onChange}
+                    values={values[registerFormKeys.Password]}
+                    />
+                </div>
+                <div className={styles.formGroup}>
                     <input type="text" 
                     className="form-control item" 
                     id="name" 
@@ -69,16 +79,7 @@ export default function Register() {
                     values={values[registerFormKeys.Surname]}
                     />
                 </div>
-                <div className={styles.formGroup}>
-                    <input type="password" 
-                    className="form-control item" 
-                    id="password" 
-                    placeholder="Парола" 
-                    name="password"
-                    onChange={onChange}
-                    values={values[registerFormKeys.Password]}
-                    />
-                </div>
+
                 <div className={styles.formGroup}>
                     <input type="text" 
                     className="form-control item" 

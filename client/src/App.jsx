@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer';
 import Schedule from './components/Schedule/Schedule';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
+import Logout from './components/Logout/Logout';
 
 function App() {
 
@@ -21,12 +22,13 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/studios' element={<Studios />} />
           <Route path='/schedule' element={<Schedule />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
         </Routes>
         <Footer />
       </div>

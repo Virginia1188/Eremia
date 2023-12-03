@@ -18,16 +18,16 @@ export const logout = () => request.get(`${baseUrl}${Path.Logout}`)
 
 export const register = (
     email,
+    password,
     name,
     surname,
-    password,
     studio,
     group,
 ) => request.post(`${baseUrl}${Path.Register}`, {
     email,
+    password,
     name,
     surname,
-    password,
     studio,
     group,
 });

@@ -30,13 +30,13 @@ export const AuthProvider = ({
 
 
     const registerSubmitHandler = async (values) => {
-        const result = authService.register(
+        const result = await authService.register(
             values.email,
+            values.password,
             values.name,
             values.surname,
-            values.password,
             values.studio,
-            values.group,);
+            values.group);
 
         setAuth(result);
         localStorage.setItem('accessToken', result.accessToken);
@@ -48,9 +48,11 @@ export const AuthProvider = ({
         loginSubmitHandler,
         logoutHandler,
         registerSubmitHandler,
-        username: auth.username || auth.email,
+        
         email: auth.email,
+        name: auth.name,
         userId: auth._id,
+
         isAuthenticated: !!auth.accessToken,
     }
 
