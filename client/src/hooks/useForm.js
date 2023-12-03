@@ -7,6 +7,12 @@ export default function useForm(submitHandler, initialValues) {
     //     setValues(initialValues);
     // }, [initialValues])
 
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    const handleAdminCheckboxChange = (e) =>{
+        setIsAdmin(e.target.checked);
+    }
+
     const onChange = (e) => {
         setValues(state => ({
             ...state,

@@ -1,15 +1,24 @@
 
 const buildOptions = (data) => {
     const options = {};
+    console.log(data);
     if (data) {
+        
         options.body = JSON.stringify(data);
         options.headers = {
             'content-type': 'applications/json'
         };
+
     }
 
     const token = localStorage.getItem('accessToken');
 
+    if(token && data.admin){
+        options.headers = {
+            ...options.headers,
+            'X-Admin': token
+        }
+    }
     if (token) {
         options.headers = {
             ...options.headers,
@@ -35,6 +44,7 @@ export const request = async (method, url, data) => {
     if (!response.ok) {
         throw result;
     }
+    console.log(result);
     return result;
 }
 

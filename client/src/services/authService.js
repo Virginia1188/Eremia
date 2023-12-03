@@ -23,6 +23,7 @@ export const register = (
     surname,
     studio,
     group,
+    admin,
 ) => request.post(`${baseUrl}${Path.Register}`, {
     email,
     password,
@@ -30,4 +31,5 @@ export const register = (
     surname,
     studio,
     group,
+    admin,
 });

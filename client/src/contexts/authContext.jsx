@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import * as authService from '../services/authService';
 import usePersistedState from "../hooks/usePersistedState";
@@ -6,6 +6,8 @@ import Path from "../paths";
 
 
 const AuthContext = createContext();
+
+const ADMIN_CODE = 'admin_code';
 
 export const AuthProvider = ({
     children,
@@ -30,13 +32,30 @@ export const AuthProvider = ({
 
 
     const registerSubmitHandler = async (values) => {
+
+        if (values.adminPass !== ADMIN_CODE) {
+            // // Implement additional verification step for admin registration
+
+            // const adminVerification = prompt('Enter admin verification code:');
+            // if (values.adminPass !== ADMIN_CODE) {
+                alert('Invalid verification code. Admin registration not allowed.');
+                return;
+            // }
+
+           
+        }
+
+        values.admin = true;
+        
         const result = await authService.register(
             values.email,
             values.password,
             values.name,
             values.surname,
             values.studio,
-            values.group);
+            values.group,
+            values.admin,
+        );
 
         setAuth(result);
         localStorage.setItem('accessToken', result.accessToken);
@@ -48,7 +67,7 @@ export const AuthProvider = ({
         loginSubmitHandler,
         logoutHandler,
         registerSubmitHandler,
-        
+
         email: auth.email,
         name: auth.name,
         userId: auth._id,
