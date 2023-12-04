@@ -12,6 +12,8 @@ import Schedule from './components/Schedule/Schedule';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
+import Path from './paths';
+import CreateStudio from './components/Admin/CreateStudio/CreateStudio';
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout />} />
+
+          <Route path={Path.CreateStudio} element={<CreateStudio />} />
         </Routes>
         <Footer />
       </div>
