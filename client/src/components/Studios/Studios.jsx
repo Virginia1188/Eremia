@@ -16,12 +16,12 @@ export default function Studios() {
     }, [])
 
     return (
-        <div>
+        <div >
             <h2 className={styles.titleStudios} >Нашите Зали</h2>
             <div className={styles.cards}>
 
                 {studios.map(studio => (
-                    <div className={styles.card}>
+                    <div className={styles.card} key={studio._id}>
                         <img className={styles.cardImg} src={studio.imageUrl} alt="" />
                         <h2 className={styles.cardH2}>
                            {studio.name}

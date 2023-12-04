@@ -1,7 +1,8 @@
 
-const buildOptions = (data) => {
+const buildOptions = (data, isAdmin) => {
     const options = {};
-    console.log(data);
+    const token = localStorage.getItem('accessToken');
+
     if (data) {
         
         options.body = JSON.stringify(data);
@@ -11,14 +12,13 @@ const buildOptions = (data) => {
 
     }
 
-    const token = localStorage.getItem('accessToken');
-
-    if(token && data.admin){
-        options.headers = {
-            ...options.headers,
-            'X-Admin': token
-        }
-    }
+    // if(token && isAdmin){
+    //     options.headers = {
+    //         ...options.headers,
+    //         'X-Admin': token
+    //     }
+    // }
+    
     if (token) {
         options.headers = {
             ...options.headers,
@@ -44,7 +44,6 @@ export const request = async (method, url, data) => {
     if (!response.ok) {
         throw result;
     }
-    console.log(result);
     return result;
 }
 

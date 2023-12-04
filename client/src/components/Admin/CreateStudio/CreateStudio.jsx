@@ -18,16 +18,14 @@ export default function CreateStudio() {
         Instructor: 'instructor',
 
     }
-    // const studioData = Object.fromEntries(new FormData(e.currentTarget));
 
     const navigate = useNavigate();
 
-    const { userId } = useContext(AuthContext);
+    const { userId, isAdmin } = useContext(AuthContext);
 
     const createSubmitHandler = async (e) => {
-        // e.preventDefault();
         try {
-            const result = await studioService.create(values, userId);
+            const result = await studioService.create(values, userId, isAdmin);
             console.log(values);
             navigate(Path.Studios);
         } catch (error) {
@@ -40,7 +38,7 @@ export default function CreateStudio() {
         [registerFormKeys.ImageUrl]: '',
         [registerFormKeys.Address]: '',
         [registerFormKeys.Instructor]: '',
-        // [registerFormKeys.Group]: [],
+        groups: [],
 
     })
 
