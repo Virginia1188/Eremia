@@ -1479,8 +1479,20 @@
     	},
     	furniture: {
     	},
-    	orders: {
-    	},
+    	studios: {
+            "3564027f-adcd-4425-b2c0-1253d2386c0c": {
+                name: "Младост",
+                address: "Младост 2, ул. Св. Кипрян 254",
+                imageUrl: "https://scontent-lhr8-2.xx.fbcdn.net/v/t31.18172-8/18556493_1515706791774441_2590707816351787757_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=7a1959&_nc_ohc=bib7VpuL-dUAX8g8tq1&_nc_ht=scontent-lhr8-2.xx&oh=00_AfDgoBdvwqI9N1wU-OPy5O7GgoWeeTwwPP3Sbg1c3pF_NA&oe=6595D488",
+                instructor: "Цветомир Борисов",
+                gropus: [
+                    "Зелена",
+                    "Розова",
+                ],
+                ownerId: "18a00c3a-a3d3-418e-bf34-01f165f854c6",
+                _id: "3564027f-adcd-4425-b2c0-1253d2386c0c"
+            }
+        },
     	movies: {
     		"1240549d-f0e0-497e-ab99-eb8f703713d7": {
     			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
