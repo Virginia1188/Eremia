@@ -6,3 +6,11 @@ export const getAll = async () => {
     const result = await request.get(baseUrl);
     return Object.values(result);
 }
+
+
+export const create = async(studioData, ownerId) => {
+    studioData.ownerId= ownerId;
+    const result = await request.post(baseUrl, studioData)
+
+    return result;
+}

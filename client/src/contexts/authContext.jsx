@@ -45,7 +45,11 @@ export const AuthProvider = ({
            
         }
 
-        values.admin = true;
+        if(values.adminPass === ADMIN_CODE){
+            values.admin = true;
+
+        }
+
 
         const result = await authService.register(
             values.email,

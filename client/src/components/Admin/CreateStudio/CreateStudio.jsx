@@ -2,41 +2,46 @@ import { useContext, useState } from 'react';
 
 import styles from './CreateStudio.module.css';
 
-import AuthContext from '../../../contexts/authContext';
+import AuthContext, { AuthProvider } from '../../../contexts/authContext';
 import useForm from '../../../hooks/useForm';
+import * as studioService from '../../../services/studioService';
+import { useNavigate } from 'react-router-dom';
+import Path from '../../../paths';
 
 
 export default function CreateStudio() {
 
     const registerFormKeys = {
-        Email: 'email',
-        Password: 'password',
         Name: 'name',
-        Surname: 'surname',
-        Studio: 'studio',
-        Group: 'group',
-        Admin: 'admin',
-        AdminPass: 'adminPass'
-    }
-
-    const [isAdmin, setIsAdmin] = useState(false);
-
-    const handleAdminCheckboxChange = (e) => {
-        setIsAdmin(e.target.checked);
+        Image: 'imageUrl',
+        Address: 'address',
+        Instructor: 'instructor',
 
     }
+    // const studioData = Object.fromEntries(new FormData(e.currentTarget));
 
-    const { registerSubmitHandler } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-        [registerFormKeys.Email]: '',
-        [registerFormKeys.Password]: '',
+    const { userId } = useContext(AuthContext);
+
+    const createSubmitHandler = async (e) => {
+        // e.preventDefault();
+        try {
+            const result = await studioService.create(values, userId);
+            console.log(values);
+            navigate(Path.Studios);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
         [registerFormKeys.Name]: '',
-        [registerFormKeys.Surname]: '',
-        [registerFormKeys.Studio]: '',
-        [registerFormKeys.Group]: '',
-        [registerFormKeys.Admin]: false,
-        [registerFormKeys.AdminPass]: '',
+        [registerFormKeys.ImageUrl]: '',
+        [registerFormKeys.Address]: '',
+        [registerFormKeys.Instructor]: '',
+        // [registerFormKeys.Group]: [],
+
     })
 
     return (
@@ -65,7 +70,7 @@ export default function CreateStudio() {
                         className="form-control item"
                         id="image"
                         placeholder="Снимка"
-                        name="image"
+                        name="imageUrl"
                         onChange={onChange}
                         values={values[registerFormKeys.Image]}
                     />
