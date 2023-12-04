@@ -46,7 +46,7 @@ export const AuthProvider = ({
         }
 
         values.admin = true;
-        
+
         const result = await authService.register(
             values.email,
             values.password,
@@ -67,7 +67,7 @@ export const AuthProvider = ({
         loginSubmitHandler,
         logoutHandler,
         registerSubmitHandler,
-
+        admin: auth.admin,
         email: auth.email,
         name: auth.name,
         userId: auth._id,

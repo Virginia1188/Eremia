@@ -21,8 +21,9 @@ export default function Register() {
 
     const [isAdmin, setIsAdmin] = useState(false);
 
-    const handleAdminCheckboxChange = (e) =>{
+    const handleAdminCheckboxChange = (e) => {
         setIsAdmin(e.target.checked);
+
     }
 
     const { registerSubmitHandler } = useContext(AuthContext);
@@ -91,41 +92,59 @@ export default function Register() {
                 </div>
 
                 <div className={styles.formGroup}>
-                    <input type="text"
+
+                    <select
+                        id="dropdown-studio"
                         className="form-control item"
-                        id="studio"
-                        placeholder="Зала"
                         name="studio"
-                        onChange={onChange}
                         values={values[registerFormKeys.Studio]}
-                    />
+                        onChange={onChange}
+                    >
+                        <option value="">Избери Зала</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+
+                    {/* {selectedOption && (
+                        <p>You selected: {selectedOption}</p>
+                    )} */}
                 </div>
                 <div className={styles.formGroup}>
-                    <input type="text"
+
+                    <select
+                        id="dropdown-group"
                         className="form-control item"
-                        id="group"
-                        placeholder="Група"
                         name="group"
-                        onChange={onChange}
                         values={values[registerFormKeys.Group]}
-                    />
+                        onChange={onChange}
+                    >
+                        <option value="">Избери Група</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+
+                    {/* {selectedOption && (
+                        <p>You selected: {selectedOption}</p>
+                    )} */}
                 </div>
                 <label>
-                    Register as admin:
+                    Регистрация на админ:
                     <input type="checkbox" name='admin' checked={isAdmin} onChange={handleAdminCheckboxChange} />
                 </label>
 
-                {isAdmin && 
-                                <div className={styles.formGroup}>
-                                <input type="text"
-                                    className="form-control item"
-                                    id="adminPass"
-                                    placeholder="Админ парола"
-                                    name="adminPass"
-                                    onChange={onChange}
-                                    values={values[registerFormKeys.AdminPass]}
-                                />
-                            </div>}
+                {isAdmin &&
+                    <div className={styles.formGroup}>
+                        <input type="text"
+                            className="form-control item"
+                            id="adminPass"
+                            placeholder="Админ парола"
+                            name="adminPass"
+                            onChange={onChange}
+                            values={values[registerFormKeys.AdminPass]}
+                        />
+                    </div>}
                 <div className={styles.formGroup}>
                     <button type="submit" className={[styles.createAccount]}>Регистрация</button>
                 </div>
