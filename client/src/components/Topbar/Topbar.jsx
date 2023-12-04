@@ -37,6 +37,15 @@ export default function Topbar() {
                                     </div>
                                 )}
 
+                                <div>
+                                    <Link className="text-white pr-3" to={Path.CreateStudio}>Добави нова зала</Link>
+                                    <span className="text-white">|</span>
+                                    <Link className="text-white px-3" to={Path}>Добави нова група</Link>
+                                    <span className="text-white">|</span>
+                                    <Link className="text-white px-3" to={Path}>Профил</Link>
+                                </div>
+
+
                             </div>
                         </div>
                         <div className="col-md-6 text-center text-lg-right">

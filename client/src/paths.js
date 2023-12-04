@@ -7,6 +7,7 @@ const Path = {
     Register: '/register',
     Schedule: '/schedule',
     Studios: '/studios',
+    CreateStudio: '/create-studio',
 
 }
 
