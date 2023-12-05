@@ -1,44 +1,96 @@
-
+import { Link } from 'react-router-dom';
+import styles from './StudioDetails.module.css';
+import Table from 'react-bootstrap/Table';
+// import {} from '../../../../'
 
 export default function StudioDetails() {
 
-    return(
-        <div className="container-fluid py-5">
-        <div className="container py-5">
-            <div className="row">
-                <div className="col-lg-6">
-                    <h1 className="section-title position-relative mb-5">Best Services We Provide For Our Clients</h1>
-                </div>
-                <div className="col-lg-6 mb-5 mb-lg-0 pb-5 pb-lg-0"></div>
+    return (
+        <div className={styles.main}>
+
+            <h2 className={styles.titleStudios} >Зала Младост</h2>
+            <div className={styles.studioDetails}>
+                <p>address</p>
+                <span>Instructor</span>
             </div>
-            <div className="row">
-                <div className="col-12">
-                    <div className="owl-carousel service-carousel">
-                        <div className="service-item">
-                            <div className="service-img mx-auto">
-                                <img className="rounded-circle w-100 h-100 bg-light p-3" src="img/service-1.jpg" style="object-fit: cover;"/>
-                            </div>
-                            <div className="position-relative text-center bg-light rounded p-4 pb-5" style="margin-top: -75px;">
-                                <h5 className="font-weight-semi-bold mt-5 mb-3 pt-5">Quality Maintain</h5>
-                                <p>Dolor nonumy sed eos sed lorem diam amet eos magna. Dolor kasd lorem duo stet kasd justo</p>
-                                <a href="" className="border-bottom border-secondary text-decoration-none text-secondary">Learn More</a>
-                            </div>
-                        </div>
-                        <div className="service-item">
-                            <div className="service-img mx-auto">
-                                <img className="rounded-circle w-100 h-100 bg-light p-3" src="img/service-2.jpg" style="object-fit: cover;"/>
-                            </div>
-                            <div className="position-relative text-center bg-light rounded p-4 pb-5" style="margin-top: -75px;">
-                                <h5 className="font-weight-semi-bold mt-5 mb-3 pt-5">Individual Approach</h5>
-                                <p>Dolor nonumy sed eos sed lorem diam amet eos magna. Dolor kasd lorem duo stet kasd justo</p>
-                                <a href="" className="border-bottom border-secondary text-decoration-none text-secondary">Learn More</a>
-                            </div>
-                        </div>
+
+
+            <div className={styles.tableDiv}>
+                <h5>График на репетициите</h5>
+                <Table responsive="sm" className={styles.table}>
+                    <thead>
+                        <tr>
+                            <th>Час/Ден</th>
+                            <th>Понеделник</th>
+                            <th>Бторник</th>
+                            <th>Сряда</th>
+                            <th>Четвъртък</th>
+                            <th>Петък</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>18.30ч</td>
+                            <td>Червени</td>
+                            <td>Зелени</td>
+                            <td>Зелени</td>
+                            <td>Червени</td>
+                            <td>Зелени</td>
+
+                        </tr>
+                        <tr>
+                            <td>19.45ч</td>
+                            <td>Розови</td>
+                            <td>Жълти</td>
+                            <td>Розови</td>
+                            <td>Жълти</td>
+                            <td>Жълти</td>
+
+                        </tr>
+
+                    </tbody>
+                </Table>
+            </div>
+
+
+            <div className={styles.cards}>
+
+
+                <div className={styles.card} >
+                    {/* <img className={styles.cardImg} src='../../../../public/img/logo_orange.png' alt="logo" /> */}
+                    <div >
+                        <h2 className={styles.cardH2}>
+                            Name
+                        </h2>
 
                     </div>
+
+                    <div className={styles.cardText}>
+
+                        <p className={styles.cardP}>
+                            something
+                        </p>
+
+                        <Link to='#' className={styles.button}>
+                            Към зала Младост
+                            <span className={styles.materialSymbolsOutlined}>
+                                <i className="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </Link>
+
+                        {/* <Link className={styles.btnEdit} to='#'>Edit</Link> */}
+
+
+                    </div>
+
                 </div>
+
+
             </div>
+
         </div>
-    </div>
     );
+
+
+
 }
