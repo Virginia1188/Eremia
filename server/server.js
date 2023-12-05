@@ -1453,30 +1453,7 @@
     			_createdOn: 1613551388793
     		}
     	},
-    	catches: {
-    		"07f260f4-466c-4607-9a33-f7273b24f1b4": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			angler: "Paulo Admorim",
-    			weight: 636,
-    			species: "Atlantic Blue Marlin",
-    			location: "Vitoria, Brazil",
-    			bait: "trolled pink",
-    			captureTime: 80,
-    			_createdOn: 1614760714812,
-    			_id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
-    		},
-    		"bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			angler: "John Does",
-    			weight: 554,
-    			species: "Atlantic Blue Marlin",
-    			location: "Buenos Aires, Argentina",
-    			bait: "trolled pink",
-    			captureTime: 120,
-    			_createdOn: 1614760782277,
-    			_id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-    		}
-    	},
+    	
     	furniture: {
     	},
     	studios: {
@@ -1491,6 +1468,19 @@
                 ],
                 ownerId: "18a00c3a-a3d3-418e-bf34-01f165f854c6",
                 _id: "3564027f-adcd-4425-b2c0-1253d2386c0c"
+            },
+
+            "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
+                name: "Студенски Град",
+                address: "ул. Академик Стефан Младенов 1",
+                imageUrl: "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/345608724_276275501418825_7141408615547866733_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=3635dc&_nc_ohc=RIuzDzJxH1sAX-xrHfR&_nc_ht=scontent-lhr6-2.xx&oh=00_AfBJ3urwcFT_lb2gsjcYsMjmkXr_OoRcDnDkNyLAiw9zZQ&oe=6573604A",
+                instructor: "Кирил Илиев",
+                gropus: [
+                    "Червена",
+                    "Лилава",
+                ],
+                ownerId: "18a00c3a-a3d3-418e-bf34-01f165f854c6",
+                _id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
             }
         },
     	movies: {

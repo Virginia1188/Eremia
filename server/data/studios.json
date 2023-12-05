@@ -6,5 +6,14 @@
         "instructor": "Cvetomir Borisov",
         "ownerId": "18a00c3a-a3d3-418e-bf34-01f165f854c6",
         "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
+    },
+
+    "3564027f-adcd-4425-b2c0-1253d2386c0g": {
+        "name": "Mladost",
+        "address": "sv. kiprqn",
+        "imageUrl": "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/345608724_276275501418825_7141408615547866733_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=3635dc&_nc_ohc=RIuzDzJxH1sAX-xrHfR&_nc_ht=scontent-lhr6-2.xx&oh=00_AfBJ3urwcFT_lb2gsjcYsMjmkXr_OoRcDnDkNyLAiw9zZQ&oe=6573604A",
+        "instructor": "Cvetomir Borisov",
+        "ownerId": "18a00c3a-a3d3-418e-bf34-01f165f854c6",
+        "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
     }
 }
