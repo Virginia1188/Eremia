@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+
 import styles from './Studios.module.css'
 
 import * as studioService from '../../services/studioService';
+import Path from '../../paths';
+import AuthContext from '../../contexts/authContext';
 
 export default function Studios() {
+    const { userId, isAdmin } = useContext(AuthContext);
 
     const [studios, setStudios] = useState([]);
 
@@ -23,6 +28,7 @@ export default function Studios() {
                 {studios.map(studio => (
                     <div className={styles.card} key={studio._id}>
                         <img className={styles.cardImg} src={studio.imageUrl} alt="" />
+                        
                         <div className={styles.cardText}>
                             <h2 className={styles.cardH2}>
                                 {studio.name}
@@ -37,6 +43,10 @@ export default function Studios() {
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </span>
                             </a>
+                            {isAdmin && (
+                            <Link className={styles.btnEdit} to={Path.CreateStudio}>Edit</Link>
+
+                            )}
                         </div>
 
                     </div>
