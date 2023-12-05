@@ -23,19 +23,22 @@ export default function Studios() {
                 {studios.map(studio => (
                     <div className={styles.card} key={studio._id}>
                         <img className={styles.cardImg} src={studio.imageUrl} alt="" />
-                        <h2 className={styles.cardH2}>
-                           {studio.name}
-                        </h2>
-                        <p className={styles.cardP}>
-                            {studio.address} Ръководител: {studio.instructor}
-                        </p>
+                        <div className={styles.cardText}>
+                            <h2 className={styles.cardH2}>
+                                {studio.name}
+                            </h2>
+                            <p className={styles.cardP}>
+                                {studio.address} Ръководител: {studio.instructor}
+                            </p>
 
-                        <a href="#" className={styles.button}>
-                            Към зала Младост
-                            <span className={styles.materialSymbolsOutlined}>
-                                <i className="fa-solid fa-arrow-right"></i>
-                            </span>
-                        </a>
+                            <a href="#" className={styles.button}>
+                                Към зала Младост
+                                <span className={styles.materialSymbolsOutlined}>
+                                    <i className="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+
                     </div>
                 ))}
 
