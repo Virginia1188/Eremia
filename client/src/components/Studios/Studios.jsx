@@ -20,7 +20,6 @@ export default function Studios() {
                 console.log(err);
             })
     }, [])
-
     return (
         <div >
             <h2 className={styles.titleStudios} >Нашите Зали</h2>
@@ -38,14 +37,14 @@ export default function Studios() {
                                 {studio.address} Ръководител: {studio.instructor}
                             </p>
 
-                            <a href="#" className={styles.button}>
+                            <Link to={pathToUrl(Path.StudioDetails, {studioId: studio._id})} className={styles.button}>
                                 Към зала Младост
                                 <span className={styles.materialSymbolsOutlined}>
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </span>
-                            </a>
+                            </Link>
                             {isAdmin && (
-                                <Link className={styles.btnEdit} to={pathToUrl(Path.EditStudio, studio._id)}>Edit</Link>
+                                <Link className={styles.btnEdit} to={pathToUrl(Path.EditStudio, {studioId: studio._id})}>Edit</Link>
 
                             )}
                         </div>
