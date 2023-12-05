@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import styles from './EditStudio.module.css';
 
@@ -10,38 +10,47 @@ import Path from '../../../paths';
 
 
 export default function EditStudio() {
-    const registerFormKeys = {
-        Name: 'name',
-        Image: 'imageUrl',
-        Address: 'address',
-        Instructor: 'instructor',
+    // const registerFormKeys = {
+    //     Name: 'name',
+    //     Image: 'imageUrl',
+    //     Address: 'address',
+    //     Instructor: 'instructor',
 
-    }
+    // }
 
     const navigate = useNavigate();
 
-    const { userId, isAdmin } = useContext(AuthContext);
-
     const { studioId } = useParams();
 
-    const createSubmitHandler = async (e) => {
+    const [studio, setStudio] = useState({
+        name: '',
+        imageUrl: '',
+        address: '',
+        instructor: '',
+    });
+    useEffect(() =>{
+        studioService.getOne(studioId)
+        .then(result => {
+            setStudio(result);
+        })
+    }, [studioId]);
+
+
+    // const { userId, isAdmin } = useContext(AuthContext);
+
+
+    const editSubmitHandler = async (values) => {
         try {
-            const result = await studioService.create(values, userId, isAdmin);
+            const result = await studioService.edit(studioId, values);
             console.log(values);
             navigate(Path.Studios);
         } catch (error) {
             console.log(error);
         }
     }
+    console.log(studio);
+    const { values, onChange, onSubmit } = useForm(editSubmitHandler, studio);
 
-    const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
-        [registerFormKeys.Name]: '',
-        [registerFormKeys.ImageUrl]: '',
-        [registerFormKeys.Address]: '',
-        [registerFormKeys.Instructor]: '',
-        groups: [],
-
-    })
     return(
         <div className={styles.registrationForm}>
 
@@ -49,7 +58,7 @@ export default function EditStudio() {
 
                 <div className={styles.formIcon}>
                     <img src="public/img/logo_red.png" alt="logo" />
-                    <h5>Редактирай зала {studioId}</h5>
+                    <h5>Зала {values.name}</h5>
                 </div>
                 <div className={styles.formGroup}>
                     <input type="text"
@@ -57,8 +66,9 @@ export default function EditStudio() {
                         id="name"
                         placeholder="Име на студиото"
                         name="name"
+                        value={studio.name}
                         onChange={onChange}
-                        values={values[registerFormKeys.Name]}
+
                     />
                 </div>
                 <div className={styles.formGroup}>
@@ -68,7 +78,7 @@ export default function EditStudio() {
                         placeholder="Снимка"
                         name="imageUrl"
                         onChange={onChange}
-                        values={values[registerFormKeys.Image]}
+                        value={studio.imageUrl}
                     />
                 </div>
                 <div className={styles.formGroup}>
@@ -78,7 +88,7 @@ export default function EditStudio() {
                         placeholder="Адрес"
                         name="address"
                         onChange={onChange}
-                        values={values[registerFormKeys.Address]}
+                        value={studio.address}
                     />
                 </div>
                 <div className={styles.formGroup}>
@@ -88,12 +98,12 @@ export default function EditStudio() {
                         placeholder="Ръководител"
                         name="instructor"
                         onChange={onChange}
-                        values={values[registerFormKeys.Instructor]}
+                        value={studio.instructor}
                     />
                 </div>
 
                 <div className={styles.formGroup}>
-                    <button type="submit" className={[styles.createAccount]}>Добави нова зала</button>
+                    <button type="submit" className={[styles.createAccount]}>Редактирай</button>
                 </div>
             </form>
             

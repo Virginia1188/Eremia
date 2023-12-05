@@ -8,8 +8,13 @@ export const getAll = async () => {
 }
 
 
-export const create = async(studioData) => {
-    const result = await request.post(baseUrl, studioData );
+export const create = async (studioData) => {
+    const result = await request.post(baseUrl, studioData);
 
+    return result;
+}
+
+export const getOne = async (studioId) => {
+    const result = await request.get(`${baseUrl}/${studioId}`);
     return result;
 }
