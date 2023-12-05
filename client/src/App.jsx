@@ -15,6 +15,7 @@ import Logout from './components/Logout/Logout';
 import Path from './paths';
 import CreateStudio from './components/Admin/CreateStudio/CreateStudio';
 import EditStudio from './components/Admin/EditStudio/EditStudio';
+import StudioDetails from './components/Admin/StudioDetails/StudioDetails';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
 
           <Route path={Path.CreateStudio} element={<CreateStudio />} />
           <Route path={Path.EditStudio} element={<EditStudio />} />
+          <Route path={Path.StudioDetails} element={<StudioDetails />} />
         </Routes>
         <Footer />
       </div>

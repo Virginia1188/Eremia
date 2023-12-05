@@ -8,7 +8,7 @@ const Path = {
     Schedule: '/schedule',
     Studios: '/studios',
     CreateStudio: '/create-studio',
-    StudioDetails: '/studio/:studioId',
+    StudioDetails: '/studios/:studioId',
     EditStudio: '/studios/:studioId/edit',
 
 }
