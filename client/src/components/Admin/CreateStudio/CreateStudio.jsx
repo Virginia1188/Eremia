@@ -46,7 +46,6 @@ export default function CreateStudio() {
 
         <div className={styles.registrationForm}>
 
-            {/* <script src="assets/js/script.js"></script> */}
             <form onSubmit={onSubmit}>
 
                 <div className={styles.formIcon}>
@@ -94,72 +93,11 @@ export default function CreateStudio() {
                     />
                 </div>
 
-                {/* <div className={styles.formGroup}>
-
-                    <select
-                        id="dropdown-studio"
-                        className="form-control item"
-                        name="studio"
-                        values={values[registerFormKeys.Studio]}
-                        onChange={onChange}
-                    >
-                        <option value="">Избери Зала</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                    </select>
-
-                    {selectedOption && (
-                        <p>You selected: {selectedOption}</p>
-                    )}
-                </div> */}
-                {/* <div className={styles.formGroup}>
-
-                    <select
-                        id="dropdown-group"
-                        className="form-control item"
-                        name="group"
-                        values={values[registerFormKeys.Group]}
-                        onChange={onChange}
-                    >
-                        <option value="">Избери Група</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                    </select>
-
-                    {selectedOption && (
-                        <p>You selected: {selectedOption}</p>
-                    )}
-                </div> */}
-                {/* <label>
-                    Регистрация на админ:
-                    <input type="checkbox" name='admin' checked={isAdmin} onChange={handleAdminCheckboxChange} />
-                </label> */}
-
-                {/* {isAdmin &&
-                    <div className={styles.formGroup}>
-                        <input type="text"
-                            className="form-control item"
-                            id="adminPass"
-                            placeholder="Админ парола"
-                            name="adminPass"
-                            onChange={onChange}
-                            values={values[registerFormKeys.AdminPass]}
-                        />
-                    </div>} */}
-
                 <div className={styles.formGroup}>
                     <button type="submit" className={[styles.createAccount]}>Добави нова зала</button>
                 </div>
             </form>
-            {/* <div className={styles.socialMedia}>
-                <h5>Имате профил</h5>
-                <div className={styles.socialIcons}>
-                    <a href="/login">Вход</a>
-
-                </div>
-            </div> */}
+            
         </div>
     );
 }

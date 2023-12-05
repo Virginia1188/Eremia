@@ -5,7 +5,7 @@ import styles from './EditStudio.module.css';
 import AuthContext, { AuthProvider } from '../../../contexts/authContext';
 import useForm from '../../../hooks/useForm';
 import * as studioService from '../../../services/studioService';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../../paths';
 
 
@@ -21,6 +21,8 @@ export default function EditStudio() {
     const navigate = useNavigate();
 
     const { userId, isAdmin } = useContext(AuthContext);
+
+    const { studioId } = useParams();
 
     const createSubmitHandler = async (e) => {
         try {
@@ -47,7 +49,7 @@ export default function EditStudio() {
 
                 <div className={styles.formIcon}>
                     <img src="public/img/logo_red.png" alt="logo" />
-                    <h5>Добави нова зала</h5>
+                    <h5>Редактирай зала {studioId}</h5>
                 </div>
                 <div className={styles.formGroup}>
                     <input type="text"

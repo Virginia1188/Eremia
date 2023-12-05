@@ -6,6 +6,7 @@ import styles from './Studios.module.css'
 import * as studioService from '../../services/studioService';
 import Path from '../../paths';
 import AuthContext from '../../contexts/authContext';
+import { pathToUrl } from '../../utils/pathToUrl';
 
 export default function Studios() {
     const { userId, isAdmin } = useContext(AuthContext);
@@ -28,7 +29,7 @@ export default function Studios() {
                 {studios.map(studio => (
                     <div className={styles.card} key={studio._id}>
                         <img className={styles.cardImg} src={studio.imageUrl} alt="" />
-                        
+
                         <div className={styles.cardText}>
                             <h2 className={styles.cardH2}>
                                 {studio.name}
@@ -44,7 +45,7 @@ export default function Studios() {
                                 </span>
                             </a>
                             {isAdmin && (
-                            <Link className={styles.btnEdit} to={Path.CreateStudio}>Edit</Link>
+                                <Link className={styles.btnEdit} to={pathToUrl(Path.EditStudio, studio._id)}>Edit</Link>
 
                             )}
                         </div>
