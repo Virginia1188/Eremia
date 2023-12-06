@@ -26,7 +26,7 @@ export default function Topbar() {
                                     </div>
                                 )}
 
-                                {isAuthenticated && (
+                                {isAuthenticated && !isAdmin && (
                                     <div>
                                         <Link className="text-white pr-3" to={Path}>Моята Зала</Link>
                                         <span className="text-white">|</span>
@@ -39,11 +39,13 @@ export default function Topbar() {
                                 )}
                                 {isAdmin && (
                                     <div>
-                                        <Link className="text-white pr-3" to={Path.CreateStudio}>Добави нова зала</Link>
-                                        <span className="text-white">|</span>
-                                        <Link className="text-white px-3" to={Path}>Добави нова група</Link>
+                                        {/* <Link className="text-white pr-3" to={Path.StudioDetails}>Мойте Групи</Link>
+                                        <span className="text-white">|</span> */}
+                                        <Link className="text-white pr-3" to={Path.CreateStudio}>Добави зала</Link>
                                         <span className="text-white">|</span>
                                         <Link className="text-white px-3" to={Path}>Профил</Link>
+                                        <span className="text-white">|</span>
+                                        <Link className="text-white pl-3" to={Path.Logout}>Изход</Link>
                                     </div>
                                 )}
 

@@ -45,7 +45,7 @@ export default function StudioDetails({ }) {
             {/* TODO add schedule */}
 
             {groups.map(group => (
-                <div className={styles.cards}>
+                <div className={styles.cards} key={group._id}>
 
 
                     <div className={styles.card} >

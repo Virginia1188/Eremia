@@ -1338,6 +1338,7 @@
             "7d8826f4-dd45-4e8b-bd69-0b3d5524e648": {
                 admin: true,
                 email: "ceco@abv.bg",
+                username:"ceco@abv.bg",
                 group: "option1",
                 name: "Cvetomir",
                 password: "123",
@@ -1345,6 +1346,7 @@
                 surname: "Borisov",
                 _createdOn: 1701869403256,
                 _id: "7d8826f4-dd45-4e8b-bd69-0b3d5524e648",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             }
         },
         sessions: {
