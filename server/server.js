@@ -1393,13 +1393,7 @@
     		}
     	},
     	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
+    		
     	},
     	records: {
     		i01: {
@@ -1454,7 +1448,17 @@
     		}
     	},
     	
-    	furniture: {
+    	groups: {
+            "0a272c58-b7ea-4e09-a000-7ec988248f66": {
+    			_ownerId: "18a00c3a-a3d3-418e-bf34-01f165f854c6",
+    			name: "Great recipe!",
+                dances: "80",
+                created: "Януари 2018",
+                danceList: [],
+    			_studioId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
+    			_createdOn: 1614260681375,
+    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
+    		}
     	},
     	studios: {
             "3564027f-adcd-4425-b2c0-1253d2386c0c": {
