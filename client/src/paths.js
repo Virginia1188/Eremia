@@ -10,7 +10,7 @@ const Path = {
     CreateStudio: '/create-studio',
     StudioDetails: '/studios/:studioId',
     EditStudio: '/studios/:studioId/edit',
-
+    DeleteStudio: '/studios/:studioId',
 }
 
 export default Path;

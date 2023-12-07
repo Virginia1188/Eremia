@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useContext, useEffect, useReducer, useState } from 'react';
 
 import styles from './StudioDetails.module.css';
@@ -6,11 +6,12 @@ import AuthContext from '../../../contexts/authContext';
 import * as studioService from '../../../services/studioService';
 import * as groupService from '../../../services/groupService';
 import reducer from './studioReducer';
+import Path from '../../../paths';
 
 
 
 export default function StudioDetails({ }) {
-
+    const navigate = useNavigate();
     const { } = useContext(AuthContext);
     const [studio, setStudio] = useState({});
     // const [groups, setGroup] = useState({});
@@ -30,14 +31,31 @@ export default function StudioDetails({ }) {
             })
 
     }, [studioId])
-    // console.log(groups);
+
+
+
+    const deleteClickHandler = async () => {
+        // const hasConfirmed = confirm(`Are you sure you want to delete ${studioName}`);
+
+        // if (hasConfirmed) {
+            // console.log(studioId);
+        const result = await studioService.remove(studioId);
+        // console.log(result);
+        navigate(Path.Studios);
+        // }
+    }
+
     return (
         <div className={styles.main}>
 
             <h2 className={styles.titleStudios} >Зала {studio.name}</h2>
             <div className={styles.studioDetails}>
-                <p>Адрес: {studio.address}</p>
-                <span>Ръководител: {studio.instructor}</span>
+                <p><b>Адрес: </b> {studio.address}</p>
+                <span><b>Ръководител:</b> {studio.instructor}</span>
+            </div>
+            <div className={styles.adminBtns}>
+                <button className={styles.deleteBtn} onClick={deleteClickHandler}>Премахни Зала {studio.name}</button>
+                <button className={styles.addBtn} onClick={deleteClickHandler}>Добави нова група</button>
             </div>
             <h4>Групи в зала {studio.name}</h4>
 

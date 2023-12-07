@@ -1413,7 +1413,7 @@
 
         groups: {
             "0a272c58-b7ea-4e09-a000-7ec988248f66": {
-                _ownerId: "18a00c3a-a3d3-418e-bf34-01f165f854c6",
+                _ownerId: "7d8826f4-dd45-4e8b-bd69-0b3d5524e648",
                 name: "Great recipe!",
                 dances: "80",
                 created: "Януари 2018",
@@ -1430,10 +1430,9 @@
                 imageUrl: "https://scontent-lhr8-2.xx.fbcdn.net/v/t31.18172-8/18556493_1515706791774441_2590707816351787757_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=7a1959&_nc_ohc=bib7VpuL-dUAX8g8tq1&_nc_ht=scontent-lhr8-2.xx&oh=00_AfDgoBdvwqI9N1wU-OPy5O7GgoWeeTwwPP3Sbg1c3pF_NA&oe=6595D488",
                 instructor: "Цветомир Борисов",
                 gropus: [
-                    "0a272c58-b7ea-4e09-a000-7ec988248f66",
-
+                    "0a272c58-b7ea-4e09-a000-7ec988248f66",,
                 ],
-                ownerId: "18a00c3a-a3d3-418e-bf34-01f165f854c6",
+                ownerId: "7d8826f4-dd45-4e8b-bd69-0b3d5524e648",
                 _id: "3564027f-adcd-4425-b2c0-1253d2386c0c"
             },
 
@@ -1443,10 +1442,9 @@
                 imageUrl: "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/345608724_276275501418825_7141408615547866733_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=3635dc&_nc_ohc=RIuzDzJxH1sAX-xrHfR&_nc_ht=scontent-lhr6-2.xx&oh=00_AfBJ3urwcFT_lb2gsjcYsMjmkXr_OoRcDnDkNyLAiw9zZQ&oe=6573604A",
                 instructor: "Кирил Илиев",
                 gropus: [
-                    "Червена",
-                    "Лилава",
+                    "0a272c58-b7ea-4e09-a000-7ec988248f66",,
                 ],
-                ownerId: "18a00c3a-a3d3-418e-bf34-01f165f854c6",
+                ownerId: "7d8826f4-dd45-4e8b-bd69-0b3d5524e648",
                 _id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
             }
         },

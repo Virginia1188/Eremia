@@ -37,7 +37,7 @@ export default function EditStudio() {
 
 
     // const { userId, isAdmin } = useContext(AuthContext);
-
+  
 
     const editSubmitHandler = async (values) => {
         try {
@@ -58,7 +58,7 @@ export default function EditStudio() {
 
                 <div className={styles.formIcon}>
                     <img src="public/img/logo_red.png" alt="logo" />
-                    <h5>Зала {values.name}</h5>
+                    <h5>Зала {studio.name}</h5>
                 </div>
                 <div className={styles.formGroup}>
                     <input type="text"
@@ -104,6 +104,7 @@ export default function EditStudio() {
 
                 <div className={styles.formGroup}>
                     <button type="submit" className={[styles.createAccount]}>Редактирай</button>
+
                 </div>
             </form>
             

@@ -12,6 +12,8 @@
 
 h4 {
     text-align: center;
+    font-family: 'Monotype Corsiva', sans-serif;
+    
 }
 
 .titleStudios {
@@ -22,9 +24,43 @@ h4 {
 
 }
 
+.adminBtns{
+   display: flex;
+   justify-content: center;
+   gap: 5em;
+   margin-bottom: 3em;
+}
+
+
+.deleteBtn{
+    width: 15%;
+    border-radius: 30px;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background: linear-gradient(to top right,   #fa92b5, #df68c3, #81c2eb, #5ccddf, #53ca93, #d3e597, #ffe970, #f9b48e, rgb(241, 58, 82));
+    color: black;
+    margin-top: 20px;
+    
+}
+
+.addBtn{
+    width: 15%;
+    border-radius: 30px;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background: linear-gradient(to top right,   #fa92b5, #df68c3, #81c2eb, #5ccddf, #53ca93, #d3e597, #ffe970, #f9b48e, rgb(241, 58, 82));
+    color: black;
+    margin-top: 20px;
+    
+}
+
 .studioDetails {
     text-align: center;
     padding: 1em;
+    font-family: 'Monotype Corsiva', sans-serif;
+    font-size: 1.5em;
 }
 
 .cards {
@@ -37,7 +73,6 @@ h4 {
     padding: 50px;
     font-family: 'Roboto', sans-serif;
 }
-
 
 
 .card {

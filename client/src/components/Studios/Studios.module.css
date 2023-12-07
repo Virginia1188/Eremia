@@ -81,6 +81,9 @@
   .btnEdit{
     opacity: 0;
   }
+  .btnDelete{
+    opacity: 0;
+  }
 
   &:hover .cardText{
     position: absolute;
@@ -93,7 +96,7 @@
 
   }
 
-  &:hover .btnEdit {
+ &:hover .btnDelete {
     color: rgb(240, 240, 240);
     font-weight: bold;
     background-color: #dc0000;
@@ -102,6 +105,17 @@
     inset: none;
     opacity: 1;
     transition: opacity .5s .1s ease-in;
+  }
+  &:hover .btnEdit {
+    color: rgb(240, 240, 240);
+    font-weight: bold;
+    background-color: rgb(34, 170, 7);
+    padding: 3px 6px;
+    border-radius: 3px;
+    inset: none;
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+    margin-right: 5px;
   }
   &:hover .cardH2 {
     inset: auto auto 170px 30px;

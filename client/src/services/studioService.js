@@ -18,3 +18,12 @@ export const getOne = async (studioId) => {
     const result = await request.get(`${baseUrl}/${studioId}`);
     return result;
 }
+
+export const remove = async (studioId) => request.remove(`${baseUrl}/${studioId}`);
+
+export const edit = async (studioId, studioData) => {
+
+    const result = await request.put(`${baseUrl}/${studioId}`, studioData)
+
+    return result;
+}

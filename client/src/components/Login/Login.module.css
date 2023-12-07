@@ -59,6 +59,7 @@ body{
     background: linear-gradient(to top right,   #fa92b5, #df68c3, #81c2eb, #5ccddf, #53ca93, #d3e597, #ffe970, #f9b48e, rgb(241, 58, 82));
     color: black;
     margin-top: 20px;
+    width: 100%;
 }
 
 .registrationForm .socialMedia{
