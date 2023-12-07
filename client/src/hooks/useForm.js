@@ -4,11 +4,16 @@ export default function useForm(submitHandler, initialValues) {
     const [values, setValues] = useState(initialValues);
 
     useEffect(() => {
-        setValues(initialValues);
-    }, [initialValues])
+        // Check if initialValues have changed before updating state
+        if (!areValuesEqual(values, initialValues)) {
+            setValues(initialValues);
+        }
+    }, [initialValues]);
 
-
-console.log(values);
+    function areValuesEqual(obj1, obj2) {
+        return JSON.stringify(obj1) === JSON.stringify(obj2);
+    }
+    
     const onChange = (e) => {
         const { name, value } = e.target;
         setValues((state) => ({
