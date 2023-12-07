@@ -8,11 +8,11 @@ export const getAll = async () => {
 }
 
 
-// export const create = async (studioData) => {
-//     const result = await request.post(baseUrl, studioData);
+export const create = async (groupData) => {
+    const result = await request.post(baseUrl, groupData);
 
-//     return result;
-// }
+    return result;
+}
 
 export const getOne = async (groupId) => {
     const result = await request.get(`${baseUrl}/${groupId}`);

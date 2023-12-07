@@ -16,6 +16,7 @@ import Path from './paths';
 import CreateStudio from './components/Admin/CreateStudio/CreateStudio';
 import EditStudio from './components/Admin/EditStudio/EditStudio';
 import StudioDetails from './components/Admin/StudioDetails/StudioDetails';
+import CreateGroup from './components/Admin/CreateGroup/CreateGroup';
 
 function App() {
 
@@ -37,6 +38,8 @@ function App() {
           <Route path={Path.CreateStudio} element={<CreateStudio />} />
           <Route path={Path.EditStudio} element={<EditStudio />} />
           <Route path={Path.StudioDetails} element={<StudioDetails />} />
+
+          <Route path={Path.CreateGroup} element={<CreateGroup />} />
         </Routes>
         <Footer />
       </div>

@@ -33,7 +33,6 @@ export default function StudioDetails({ }) {
     }, [studioId])
 
 
-
     const deleteClickHandler = async () => {
         // const hasConfirmed = confirm(`Are you sure you want to delete ${studioName}`);
 
@@ -43,6 +42,10 @@ export default function StudioDetails({ }) {
         // console.log(result);
         navigate(Path.Studios);
         // }
+    }
+
+    const addClickHandler = () => {
+        navigate(Path.CreateGroup);
     }
 
     return (
@@ -55,7 +58,7 @@ export default function StudioDetails({ }) {
             </div>
             <div className={styles.adminBtns}>
                 <button className={styles.deleteBtn} onClick={deleteClickHandler}>Премахни Зала {studio.name}</button>
-                <button className={styles.addBtn} onClick={deleteClickHandler}>Добави нова група</button>
+                <button className={styles.addBtn} onClick={addClickHandler}>Добави нова група</button>
             </div>
             <h4>Групи в зала {studio.name}</h4>
 
