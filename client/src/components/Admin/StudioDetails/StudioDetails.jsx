@@ -5,9 +5,9 @@ import styles from './StudioDetails.module.css';
 import AuthContext from '../../../contexts/authContext';
 import * as studioService from '../../../services/studioService';
 import * as groupService from '../../../services/groupService';
-import reducer from './studioReducer';
 import Path from '../../../paths';
 import { pathToUrl } from '../../../utils/pathToUrl';
+import { useStudio } from '../../../contexts/studioContext';
 
 
 
@@ -15,9 +15,10 @@ export default function StudioDetails({ }) {
     const navigate = useNavigate();
     const { } = useContext(AuthContext);
     const [studio, setStudio] = useState({});
-    // const [groups, setGroup] = useState({});
-    const [groups, dispatch] = useReducer(reducer, []);
+    const [groups, setGroups] = useState([]);
     const { studioId } = useParams();
+
+    const { setStudioFunk } = useStudio();
 
     useEffect(() => {
         studioService.getOne(studioId)
@@ -25,28 +26,21 @@ export default function StudioDetails({ }) {
 
         groupService.getAll(studioId)
             .then((result) => {
-                dispatch({
-                    type: 'GET_ALL_GROUPS',
-                    payload: result,
-                })
+                setGroups(result);
             })
 
     }, [studioId])
 
 
     const deleteClickHandler = async () => {
-        // const hasConfirmed = confirm(`Are you sure you want to delete ${studioName}`);
 
-        // if (hasConfirmed) {
-            // console.log(studioId);
         const result = await studioService.remove(studioId);
-        // console.log(result);
         navigate(Path.Studios);
-        // }
     }
 
     const addClickHandler = () => {
-        navigate(pathToUrl(Path.CreateGroup, { studioId: studio._id }));
+        setStudioFunk(studioId);
+        navigate(Path.CreateGroup);
     }
 
     return (
@@ -61,16 +55,20 @@ export default function StudioDetails({ }) {
                 <button className={styles.deleteBtn} onClick={deleteClickHandler}>Премахни Зала {studio.name}</button>
                 <button className={styles.addBtn} onClick={addClickHandler}>Добави нова група</button>
             </div>
-            <h4>Групи в зала {studio.name}</h4>
+            {groups.length > 0 && (
+                <h4>Групи в зала {studio.name}</h4>
+            )}
 
 
             {/* TODO add schedule */}
-
+            {groups.length <= 0 && (
+                <h4>Няма добавени групи в зала {studio.name}</h4>
+            )}
             {groups.map(group => (
                 <div className={styles.cards} key={group._id}>
 
 
-                    <div className={styles.card} >
+                    <div className={styles.card} key={group._id}>
                         <img className={styles.cardImg} src='https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/384220642_705558081613582_1456725998677837583_n.jpg?stp=c52.0.206.206a_dst-jpg_p206x206&_nc_cat=111&ccb=1-7&_nc_sid=3d9721&_nc_ohc=CxfqeDrdzC8AX8TRgzM&_nc_ht=scontent-lhr8-1.xx&oh=00_AfCAcVS0V0HDVMAIqwl6JIpudgl4pcHlCmv69fdHKm1aIw&oe=657380F4' alt="logo" />
                         <div >
                             <h2 className={styles.cardH2}>

@@ -3,10 +3,12 @@ import { useContext, useState } from 'react';
 import styles from './CreateGroup.module.css';
 
 import AuthContext, { AuthProvider } from '../../../contexts/authContext';
-import useForm from '../../../hooks/useForm';
+import useFormAuth from '../../../hooks/useFormAuth';
 import * as groupService from '../../../services/groupService';
 import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../../paths';
+import { useStudio } from '../../../contexts/studioContext';
+import { pathToUrl } from '../../../utils/pathToUrl';
 
 
 export default function CreateGroup() {
@@ -19,31 +21,32 @@ export default function CreateGroup() {
 
     }
 
-    const { studioId } = useParams();
+    // const { studioId } = useParams();
 
     const navigate = useNavigate();
 
     const { userId, isAdmin } = useContext(AuthContext);
+    const {studioId} = useStudio();
+    console.log(studioId);
 
     const createSubmitHandler = async (e) => {
         try {
-            console.log(values);
             const result = await groupService.create(values, studioId);
-            
             navigate(pathToUrl(Path.StudioDetails, { studioId: studioId }));
         } catch (error) {
             console.log(error);
         }
     }
 
-    const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
+    const { values, onChange, onSubmit } = useFormAuth(createSubmitHandler, {
         [registerFormKeys.Name]: '',
         [registerFormKeys.ImageUrl]: '',
         [registerFormKeys.Dances]: '',
         [registerFormKeys.Created]: '',
         danceList: [],
         likes: [],
-        studio: studioId
+        _studioId: studioId,
+        _ownerId: userId,
 
     })
 

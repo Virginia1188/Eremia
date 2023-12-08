@@ -17,32 +17,36 @@ import CreateStudio from './components/Admin/CreateStudio/CreateStudio';
 import EditStudio from './components/Admin/EditStudio/EditStudio';
 import StudioDetails from './components/Admin/StudioDetails/StudioDetails';
 import CreateGroup from './components/Admin/CreateGroup/CreateGroup';
+import { StudioProvider } from './contexts/studioContext';
 
 function App() {
 
   return (
     <AuthProvider>
-      <div>
-        <Topbar />
-        <Navbar />
+      <StudioProvider>
+        <div>
+          <Topbar />
+          <Navbar />
 
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/studios' element={<Studios />} />
-          <Route path='/schedule' element={<Schedule />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/logout' element={<Logout />} />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/studios' element={<Studios />} />
+            <Route path='/schedule' element={<Schedule />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/logout' element={<Logout />} />
 
-          <Route path={Path.CreateStudio} element={<CreateStudio />} />
-          <Route path={Path.EditStudio} element={<EditStudio />} />
-          <Route path={Path.StudioDetails} element={<StudioDetails />} />
+            <Route path={Path.CreateStudio} element={<CreateStudio />} />
+            <Route path={Path.EditStudio} element={<EditStudio />} />
+            <Route path={Path.StudioDetails} element={<StudioDetails />} />
 
-          <Route path={Path.CreateGroup} element={<CreateGroup />} />
-        </Routes>
-        <Footer />
-      </div>
+            <Route path={Path.CreateGroup} element={<CreateGroup />} />
+          </Routes>
+          <Footer />
+        </div>
+      </StudioProvider>
+
     </AuthProvider>
   )
 }
