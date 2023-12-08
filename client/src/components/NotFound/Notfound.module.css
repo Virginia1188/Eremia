@@ -1,0 +1,11 @@
+
+.notFound{
+    display: flex;
+    justify-content: center;
+    font-family:'Monotype Corsiva', sans-serif;
+    margin: 5em;
+}
+
+/* .h1{
+    margin: 5em;
+} */

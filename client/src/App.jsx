@@ -18,6 +18,7 @@ import EditStudio from './components/Admin/EditStudio/EditStudio';
 import StudioDetails from './components/Admin/StudioDetails/StudioDetails';
 import CreateGroup from './components/Admin/CreateGroup/CreateGroup';
 import { StudioProvider } from './contexts/studioContext';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
 
@@ -42,6 +43,9 @@ function App() {
             <Route path={Path.StudioDetails} element={<StudioDetails />} />
 
             <Route path={Path.CreateGroup} element={<CreateGroup />} />
+
+            <Route path="*" element={<NotFound />} />
+
           </Routes>
           <Footer />
         </div>
