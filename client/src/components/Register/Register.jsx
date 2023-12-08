@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import styles from './Register.module.css';
 
 import AuthContext from '../../contexts/authContext';
-import useForm from '../../hooks/useForm';
+import useFormAuth from '../../hooks/useFormAuth';
 
 
 export default function Register() {
@@ -16,19 +16,26 @@ export default function Register() {
         Studio: 'studio',
         Group: 'group',
         Admin: 'admin',
+        IsChecked: 'isChecked',
         AdminPass: 'adminPass'
     }
 
     const [isAdmin, setIsAdmin] = useState(false);
 
+console.log('is admin', isAdmin);
     const handleAdminCheckboxChange = (e) => {
-        setIsAdmin(e.target.checked);
-
-    }
+        setIsAdmin((prevIsAdmin) => {
+          if (e.target.checked) {
+            console.log(prevIsAdmin); 
+            // registerFormKeys.IsChecked=!prevIsAdmin;
+          }
+          return !prevIsAdmin;
+        });
+      }
 
     const { registerSubmitHandler } = useContext(AuthContext);
 
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    const { values, onChange, onSubmit } = useFormAuth(registerSubmitHandler, {
         [registerFormKeys.Email]: '',
         [registerFormKeys.Password]: '',
         [registerFormKeys.Name]: '',
@@ -36,6 +43,7 @@ export default function Register() {
         [registerFormKeys.Studio]: '',
         [registerFormKeys.Group]: '',
         [registerFormKeys.Admin]: false,
+        // [registerFormKeys.IsChecked]: isAdmin,
         [registerFormKeys.AdminPass]: '',
     })
 
@@ -131,7 +139,13 @@ export default function Register() {
                 </div>
                 <label>
                     Регистрация на админ:
-                    <input type="checkbox" name='admin' checked={isAdmin} onChange={handleAdminCheckboxChange} />
+                    <input
+                        type="checkbox"
+                        name='admin'
+                        checked={isAdmin}
+                        // values={values[registerFormKeys.IsChecked]}
+                        onChange={handleAdminCheckboxChange}
+                    />
                 </label>
 
                 {isAdmin &&

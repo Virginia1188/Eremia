@@ -1418,6 +1418,7 @@
                 dances: "80",
                 created: "Януари 2018",
                 danceList: [],
+                likes: [],
                 _studioId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
                 _createdOn: 1614260681375,
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"

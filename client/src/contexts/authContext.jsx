@@ -32,25 +32,30 @@ export const AuthProvider = ({
 
 
     const registerSubmitHandler = async (values) => {
-
-        if (values.adminPass !== ADMIN_CODE) {
-            // // Implement additional verification step for admin registration
-
-            // const adminVerification = prompt('Enter admin verification code:');
-            // if (values.adminPass !== ADMIN_CODE) {
+            console.log(values);
+        if(values.adminPass !== ''){
+            if( values.adminPass !== ADMIN_CODE){
                 alert('Invalid verification code. Admin registration not allowed.');
                 return;
-            // }
+            }
 
-           
+            if(values.adminPass === ADMIN_CODE){
+                values.admin = true;
+    
+            }
         }
 
-        if(values.adminPass === ADMIN_CODE){
-            values.admin = true;
+        // if (values.adminPass !== ADMIN_CODE) {
+        //     // // Implement additional verification step for admin registration
 
-        }
-
-
+        //     // const adminVerification = prompt('Enter admin verification code:');
+        //     // if (values.adminPass !== ADMIN_CODE) {
+        //         alert('Invalid verification code. Admin registration not allowed.');
+        //         return;
+        //     // } 
+        // }
+ 
+        console.log(values);
         const result = await authService.register(
             values.email,
             values.password,
@@ -60,6 +65,8 @@ export const AuthProvider = ({
             values.group,
             values.admin,
         );
+
+        
 
         setAuth(result);
         localStorage.setItem('accessToken', result.accessToken);

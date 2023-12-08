@@ -1,6 +1,6 @@
 import * as request from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/data/groups';
+const baseUrl = 'http://localhost:3030/data/studios';
 
 export const getAll = async () => {
     const result = await request.get(baseUrl);
@@ -8,8 +8,8 @@ export const getAll = async () => {
 }
 
 
-export const create = async (groupData) => {
-    const result = await request.post(baseUrl, groupData);
+export const create = async (groupData, studioId) => {
+    const result = await request.post(`${baseUrl}/${studioId}/create-group`, groupData);
 
     return result;
 }

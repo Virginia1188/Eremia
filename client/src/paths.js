@@ -11,7 +11,7 @@ const Path = {
     StudioDetails: '/studios/:studioId',
     EditStudio: '/studios/:studioId/edit',
     DeleteStudio: '/studios/:studioId',
-    CreateGroup: '/create-group'
+    CreateGroup: '/studios/:studioId/create-group'
 }
 
 export default Path;

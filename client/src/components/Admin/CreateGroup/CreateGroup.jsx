@@ -4,8 +4,8 @@ import styles from './CreateGroup.module.css';
 
 import AuthContext, { AuthProvider } from '../../../contexts/authContext';
 import useForm from '../../../hooks/useForm';
-import * as studioGroup from '../../../services/groupService';
-import { useNavigate } from 'react-router-dom';
+import * as groupService from '../../../services/groupService';
+import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../../paths';
 
 
@@ -14,10 +14,12 @@ export default function CreateGroup() {
     const registerFormKeys = {
         Name: 'name',
         Image: 'imageUrl',
-        Address: 'address',
-        Instructor: 'instructor',
+        Dances: 'dances',
+        Created: 'created',
 
     }
+
+    const { studioId } = useParams();
 
     const navigate = useNavigate();
 
@@ -25,9 +27,10 @@ export default function CreateGroup() {
 
     const createSubmitHandler = async (e) => {
         try {
-            const result = await groupService.create(values, userId, isAdmin);
             console.log(values);
-            navigate(Path.Studios);
+            const result = await groupService.create(values, studioId);
+            
+            navigate(pathToUrl(Path.StudioDetails, { studioId: studioId }));
         } catch (error) {
             console.log(error);
         }
@@ -36,9 +39,11 @@ export default function CreateGroup() {
     const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
         [registerFormKeys.Name]: '',
         [registerFormKeys.ImageUrl]: '',
-        [registerFormKeys.Address]: '',
-        [registerFormKeys.Instructor]: '',
-        groups: [],
+        [registerFormKeys.Dances]: '',
+        [registerFormKeys.Created]: '',
+        danceList: [],
+        likes: [],
+        studio: studioId
 
     })
 
@@ -56,7 +61,7 @@ export default function CreateGroup() {
                     <input type="text"
                         className="form-control item"
                         id="name"
-                        placeholder="Име на студиото"
+                        placeholder="Име на групата"
                         name="name"
                         onChange={onChange}
                         values={values[registerFormKeys.Name]}
@@ -75,26 +80,26 @@ export default function CreateGroup() {
                 <div className={styles.formGroup}>
                     <input type="text"
                         className="form-control item"
-                        id="address"
-                        placeholder="Адрес"
-                        name="address"
+                        id="dances"
+                        placeholder="Брой хора"
+                        name="dances"
                         onChange={onChange}
-                        values={values[registerFormKeys.Address]}
+                        values={values[registerFormKeys.Dances]}
                     />
                 </div>
                 <div className={styles.formGroup}>
                     <input type="text"
                         className="form-control item"
-                        id="instructor"
-                        placeholder="Ръководител"
-                        name="instructor"
+                        id="created"
+                        placeholder="Създадена"
+                        name="created"
                         onChange={onChange}
-                        values={values[registerFormKeys.Instructor]}
+                        values={values[registerFormKeys.Created]}
                     />
                 </div>
 
                 <div className={styles.formGroup}>
-                    <button type="submit" className={[styles.createAccount]}>Добави нова зала</button>
+                    <button type="submit" className={[styles.createAccount]}>Добави нова група</button>
                 </div>
             </form>
             

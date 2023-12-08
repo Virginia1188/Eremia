@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
-export default function useForm(submitHandler, initialValues) {
+export default function useForm(submitHandler, initialValues, areValuesEqual) {
     const [values, setValues] = useState(initialValues);
+    console.log(initialValues);
 
     useEffect(() => {
         // Check if initialValues have changed before updating state
@@ -16,6 +17,7 @@ export default function useForm(submitHandler, initialValues) {
     
     const onChange = (e) => {
         const { name, value } = e.target;
+        console.log(value);
         setValues((state) => ({
             ...state,
             [name]: value,
