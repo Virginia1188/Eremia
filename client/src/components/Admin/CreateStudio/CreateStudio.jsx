@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import styles from './CreateStudio.module.css';
 
 import AuthContext, { AuthProvider } from '../../../contexts/authContext';
-import useForm from '../../../hooks/useForm';
+import useFormAuth from '../../../hooks/useFormAuth';
 import * as studioService from '../../../services/studioService';
 import { useNavigate } from 'react-router-dom';
 import Path from '../../../paths';
@@ -33,7 +33,7 @@ export default function CreateStudio() {
         }
     }
 
-    const { values, onChange, onSubmit } = useForm(createSubmitHandler, {
+    const { values, onChange, onSubmit } = useFormAuth(createSubmitHandler, {
         [registerFormKeys.Name]: '',
         [registerFormKeys.ImageUrl]: '',
         [registerFormKeys.Address]: '',

@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 
 export default function useForm(submitHandler, initialValues, areValuesEqual) {
     const [values, setValues] = useState(initialValues);
-    console.log(initialValues);
+   
 
     useEffect(() => {
-        // Check if initialValues have changed before updating state
+        
         if (!areValuesEqual(values, initialValues)) {
             setValues(initialValues);
         }

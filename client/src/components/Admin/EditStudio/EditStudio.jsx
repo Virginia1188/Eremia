@@ -27,13 +27,13 @@ export default function EditStudio() {
         studioService.getOne(studioId)
             .then(result => {
                 setStudio(result);
-
             })
             .catch((error) => {
                 console.error("Error fetching studio data", error);
             })
 
     }, [studioId]);
+    console.log(studio);
 
     const editSubmitHandler = async () => {
         try {
@@ -45,9 +45,9 @@ export default function EditStudio() {
         }
     };
 
-    // function areValuesEqual(obj1, obj2) {
-    //     return JSON.stringify(obj1) === JSON.stringify(obj2);
-    // }
+    function areValuesEqual(obj1, obj2) {
+        return JSON.stringify(obj1) === JSON.stringify(obj2);
+    }
 
     const { values, onChange, onSubmit } = useForm(editSubmitHandler, studio);
 
