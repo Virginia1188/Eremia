@@ -20,6 +20,10 @@ body{
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
+.formGroup {
+    margin-bottom: 1.5em;
+}
+
 .formIcon {
     text-align: center;
     margin-bottom: 20px;
