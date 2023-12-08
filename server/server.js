@@ -1321,8 +1321,14 @@
     var protectedData = {
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
+                admin: false,
                 email: "peter@abv.bg",
                 username: "Peter",
+                group: "option1",
+                name: "Peter",
+                password: "123456",
+                studio: "option1",
+                surname: "Petrov",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
@@ -1341,7 +1347,7 @@
                 username:"ceco@abv.bg",
                 group: "option1",
                 name: "Cvetomir",
-                password: "123",
+                password: "123456",
                 studio: "option1",
                 surname: "Borisov",
                 _createdOn: 1701869403256,
@@ -1419,7 +1425,7 @@
                 created: "Януари 2018",
                 danceList: [],
                 likes: [],
-                _studioId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
+                _studioId: "3564027f-adcd-4425-b2c0-1253d2386c0c",
                 _createdOn: 1614260681375,
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
             }
