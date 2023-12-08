@@ -7,6 +7,7 @@ import * as studioService from '../../../services/studioService';
 import * as groupService from '../../../services/groupService';
 import reducer from './studioReducer';
 import Path from '../../../paths';
+import { pathToUrl } from '../../../utils/pathToUrl';
 
 
 
@@ -45,7 +46,7 @@ export default function StudioDetails({ }) {
     }
 
     const addClickHandler = () => {
-        navigate(Path.CreateGroup);
+        navigate(pathToUrl(Path.CreateGroup, { studioId: studio._id }));
     }
 
     return (

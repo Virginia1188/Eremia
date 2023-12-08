@@ -45,6 +45,10 @@ export default function EditStudio() {
         }
     };
 
+    // function areValuesEqual(obj1, obj2) {
+    //     return JSON.stringify(obj1) === JSON.stringify(obj2);
+    // }
+
     const { values, onChange, onSubmit } = useForm(editSubmitHandler, studio);
 
 
