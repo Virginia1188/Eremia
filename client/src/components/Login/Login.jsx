@@ -12,7 +12,9 @@ const LoginFormKeys = {
 
 
 export default function Login() {
-    const { loginSubmitHandler } = useContext(AuthContext);
+    const { loginSubmitHandler, error } = useContext(AuthContext);
+
+    console.log(error);
 
     const { values, onChange, onSubmit } = useFormAuth(loginSubmitHandler, {
         [LoginFormKeys.Email]: '',
@@ -30,6 +32,13 @@ export default function Login() {
                     <img src="public/img/logo_red.png" alt="logo" />
                     <h5>Влез в своя профил</h5>
                 </div>
+                {error && (
+                    <div className={styles.errorContainer}>
+                        <p>{error}</p>
+                    </div>
+
+                )}
+
                 <div className={styles.formGroup}>
                     <input
                         type="text"

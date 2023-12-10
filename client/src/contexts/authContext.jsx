@@ -15,13 +15,24 @@ export const AuthProvider = ({
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
 
+    const [error, setError] = useState();
+
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
 
-        setAuth(result);
-        localStorage.setItem('accessToken', result.accessToken);
-        navigate(Path.Home);
+        try {
+            const result = await authService.login(values.email, values.password);
+
+            setAuth(result);
+            localStorage.setItem('accessToken', result.accessToken);
+            navigate(Path.Home);
+        } catch (error) {
+            setError(error.message)
+            // console.log(error.message);
+            return error.message
+        }
+
+ 
     }
 
 
@@ -84,6 +95,7 @@ export const AuthProvider = ({
 
         isAuthenticated: !!auth.accessToken,
         isAdmin: !!auth.admin,
+        error,
 
     }
 

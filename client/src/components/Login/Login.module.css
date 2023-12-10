@@ -10,6 +10,11 @@ body{
     font-family: 'monotype corsiva';
 }
 
+.errorContainer{
+    text-align: center;
+    color: #dc0000;
+}
+
 .registrationForm form{
     background-color: #fff;
     max-width: 600px;
