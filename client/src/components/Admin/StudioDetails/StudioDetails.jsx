@@ -13,7 +13,7 @@ import { useStudio } from '../../../contexts/studioContext';
 
 export default function StudioDetails({ }) {
     const navigate = useNavigate();
-    const { } = useContext(AuthContext);
+    const { isAdmin } = useContext(AuthContext);
     const [studio, setStudio] = useState({});
     const [groups, setGroups] = useState([]);
     const { studioId } = useParams();
@@ -51,10 +51,13 @@ export default function StudioDetails({ }) {
                 <p><b>Адрес: </b> {studio.address}</p>
                 <span><b>Ръководител:</b> {studio.instructor}</span>
             </div>
-            <div className={styles.adminBtns}>
+            {isAdmin && (
+                <div className={styles.adminBtns}>
                 <button className={styles.deleteBtn} onClick={deleteClickHandler}>Премахни Зала {studio.name}</button>
                 <button className={styles.addBtn} onClick={addClickHandler}>Добави нова група</button>
             </div>
+            )}
+            
             {groups.length > 0 && (
                 <h4>Групи в зала {studio.name}</h4>
             )}
