@@ -22,7 +22,15 @@ body{
 
 .formIcon {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0;
+}
+.error {
+   color: #dc0000;
+   text-align: center;
+   margin-bottom: 10px;
+}
+.space {
+    margin-bottom: 1.5em;
 }
 
 .formIcon h5{
@@ -30,23 +38,17 @@ body{
 }
 
 .registrationForm .formGroup {
-    padding-bottom: 1.5em;
+    /* padding-bottom: 1.5em; */
 }
 
 .registrationForm .formIcon img{
 	text-align: center;
-    /* background-color: #5891ff; */
-    /* align-items: center; */
-    /* border-radius: 50%; */
-    /* font-size: 20px; */
     color: white;
     width: 250px;
     height: 200px;
-    /* margin: auto; */
     margin-bottom: 15px;
-    
     margin-top: 0;
-    /* line-height: 100px; */
+
 }
 
 .registrationForm .item{
