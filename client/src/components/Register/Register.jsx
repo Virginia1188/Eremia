@@ -15,9 +15,7 @@ export default function Register() {
         Name: 'name',
         Surname: 'surname',
         Studio: 'studio',
-        Group: 'group',
         Admin: 'admin',
-        IsChecked: 'isChecked',
         AdminPass: 'adminPass'
     }
 
@@ -51,7 +49,6 @@ export default function Register() {
         [registerFormKeys.Name]: '',
         [registerFormKeys.Surname]: '',
         [registerFormKeys.Studio]: '',
-        [registerFormKeys.Group]: '',
         [registerFormKeys.Admin]: false,
         [registerFormKeys.AdminPass]: '',
     })
@@ -113,6 +110,20 @@ export default function Register() {
         }
     }
 
+    const studioValidator = () => {
+        if(values[registerFormKeys.Studio] === ''){
+            setErrors(state =>({
+                ...state,
+                studio: 'Please choose a studio.'
+            }))
+           
+        } else {
+            if (errors.studio) {
+                setErrors(state => ({ ...state, studio: '' }));
+            }
+        }
+    }
+
     const isButtonDisabled =
         errors.email ||
         errors.password ||
@@ -122,7 +133,7 @@ export default function Register() {
         errors.group ||
         errors.adminPass;
 
-
+console.log(errors);
     return (
 
         <div className={styles.registrationForm}>
@@ -212,18 +223,21 @@ export default function Register() {
                         className="form-control item"
                         placeholder='Избери Зала'
                         name="studio"
+                        onMouseLeave={studioValidator}
                         values={values[registerFormKeys.Studio]}
                         onChange={onChange}
                     >
-
+                        <option value=''>Избери зала</option>
                         {studios.map(studio => (
-                            <option value={studio.name} key={studio._id}>{studio.name}</option>
+                            <option value={studio._id} key={studio._id}>{studio.name}</option>
                         ))}
 
                     </select>
 
                 </div>
-
+                {errors.studio && (
+                    <p className={styles.error}>{errors.studio}</p>
+                )}
                 {!errors.studio && (
                     <div className={styles.space}>
                     </div>
@@ -245,6 +259,7 @@ export default function Register() {
                             id="adminPass"
                             placeholder="Админ парола"
                             name="adminPass"
+                            onBlur={studioValidator}
                             onChange={onChange}
                             values={values[registerFormKeys.AdminPass]}
                         />

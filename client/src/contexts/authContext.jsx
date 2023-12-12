@@ -43,7 +43,6 @@ export const AuthProvider = ({
 
 
     const registerSubmitHandler = async (values,errors) => {
-            console.log(values);
         if(values.adminPass !== ''){
             if( values.adminPass !== ADMIN_CODE){
                 alert('Invalid verification code. Admin registration not allowed.');
@@ -56,12 +55,7 @@ export const AuthProvider = ({
             }
         }
 
-        // if(errors){
-        //     console.log('error from authContext', error);
-        //     return alert('Fill the form');
-        // }
  
-        console.log(values);
         const result = await authService.register(
             values.email,
             values.password,
@@ -71,7 +65,6 @@ export const AuthProvider = ({
             values.admin,
         );
 
-        
 
         setAuth(result);
         localStorage.setItem('accessToken', result.accessToken);
