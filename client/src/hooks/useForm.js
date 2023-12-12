@@ -17,7 +17,7 @@ export default function useForm(submitHandler, initialValues, areValuesEqual) {
     
     const onChange = (e) => {
         const { name, value } = e.target;
-        console.log(value);
+        // console.log(value);
         setValues((state) => ({
             ...state,
             [name]: value,

@@ -42,7 +42,7 @@ export const AuthProvider = ({
     }
 
 
-    const registerSubmitHandler = async (values) => {
+    const registerSubmitHandler = async (values,errors) => {
             console.log(values);
         if(values.adminPass !== ''){
             if( values.adminPass !== ADMIN_CODE){
@@ -56,15 +56,10 @@ export const AuthProvider = ({
             }
         }
 
-        // if (values.adminPass !== ADMIN_CODE) {
-        //     // // Implement additional verification step for admin registration
-
-        //     // const adminVerification = prompt('Enter admin verification code:');
-        //     // if (values.adminPass !== ADMIN_CODE) {
-        //         alert('Invalid verification code. Admin registration not allowed.');
-        //         return;
-        //     // } 
-        // }
+        if(errors){
+            console.log('error from authContext', error);
+            return alert('Fill the form');
+        }
  
         console.log(values);
         const result = await authService.register(
