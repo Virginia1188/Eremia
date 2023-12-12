@@ -56,10 +56,10 @@ export const AuthProvider = ({
             }
         }
 
-        if(errors){
-            console.log('error from authContext', error);
-            return alert('Fill the form');
-        }
+        // if(errors){
+        //     console.log('error from authContext', error);
+        //     return alert('Fill the form');
+        // }
  
         console.log(values);
         const result = await authService.register(
@@ -68,7 +68,6 @@ export const AuthProvider = ({
             values.name,
             values.surname,
             values.studio,
-            values.group,
             values.admin,
         );
 

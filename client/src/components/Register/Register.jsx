@@ -4,7 +4,7 @@ import styles from './Register.module.css';
 
 import AuthContext from '../../contexts/authContext';
 import useFormAuth from '../../hooks/useFormAuth';
-// import * as validator from '../../lib/validator';
+import * as studioService from '../../services/studioService';
 
 
 export default function Register() {
@@ -23,6 +23,16 @@ export default function Register() {
 
     const [isAdmin, setIsAdmin] = useState(false);
     const [errors, setErrors] = useState({});
+    const [studios, setStudios] = useState([]);
+
+
+    useEffect(() => {
+        studioService.getAll()
+            .then(result => setStudios(result))
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
 
     const handleAdminCheckboxChange = (e) => {
         setIsAdmin((prevIsAdmin) => {
@@ -61,7 +71,7 @@ export default function Register() {
     }
 
     const passwordValidator = () => {
-        
+
         const pass = values[registerFormKeys.Password];
         if (pass.length < 6) {
             setErrors(state => ({
@@ -104,16 +114,15 @@ export default function Register() {
     }
 
     const isButtonDisabled =
-    errors.email ||
-    errors.password ||
-    errors.name ||
-    errors.surname ||
-    errors.studio ||
-    errors.group ||
-    errors.adminPass;
+        errors.email ||
+        errors.password ||
+        errors.name ||
+        errors.surname ||
+        errors.studio ||
+        errors.group ||
+        errors.adminPass;
 
 
-    // console.log('errors', errors);
     return (
 
         <div className={styles.registrationForm}>
@@ -198,54 +207,24 @@ export default function Register() {
                 )}
 
                 <div className={styles.formGroup}>
-
                     <select
                         id="dropdown-studio"
                         className="form-control item"
+                        placeholder='Избери Зала'
                         name="studio"
                         values={values[registerFormKeys.Studio]}
                         onChange={onChange}
                     >
-                        <option value="">Избери Зала</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+
+                        {studios.map(studio => (
+                            <option value={studio.name} key={studio._id}>{studio.name}</option>
+                        ))}
+
                     </select>
 
-                    {/* {selectedOption && (
-                        <p>You selected: {selectedOption}</p>
-                    )} */}
                 </div>
-                {errors.studio && (
-                    <p className={styles.error}>{errors.studio}</p>
-                )}
+
                 {!errors.studio && (
-                    <div className={styles.space}>
-                    </div>
-                )}
-                <div className={styles.formGroup}>
-
-                    <select
-                        id="dropdown-group"
-                        className="form-control item"
-                        name="group"
-                        values={values[registerFormKeys.Group]}
-                        onChange={onChange}
-                    >
-                        <option value="">Избери Група</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                    </select>
-
-                    {/* {selectedOption && (
-                        <p>You selected: {selectedOption}</p>
-                    )} */}
-                </div>
-                {errors.group && (
-                    <p className={styles.error}>{errors.group}</p>
-                )}
-                {!errors.group && (
                     <div className={styles.space}>
                     </div>
                 )}
@@ -255,14 +234,13 @@ export default function Register() {
                         type="checkbox"
                         name='admin'
                         checked={isAdmin}
-                        // values={values[registerFormKeys.IsChecked]}
                         onChange={handleAdminCheckboxChange}
                     />
                 </label>
 
                 {isAdmin &&
                     <div className={styles.formGroup}>
-                        <input type="text"
+                        <input type="password"
                             className="form-control item"
                             id="adminPass"
                             placeholder="Админ парола"
@@ -279,10 +257,10 @@ export default function Register() {
                     </div>
                 )}
                 <div className={styles.formGroup}>
-                    <button 
-                    type="submit" 
-                    className={[styles.createAccount]}
-                    disabled={isButtonDisabled}
+                    <button
+                        type="submit"
+                        className={[styles.createAccount]}
+                        disabled={isButtonDisabled}
                     >Регистрация</button>
                 </div>
             </form>
