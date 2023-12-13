@@ -1446,7 +1446,7 @@
             "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
                 name: "Студенски Град",
                 address: "ул. Академик Стефан Младенов 1",
-                imageUrl: "https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/345608724_276275501418825_7141408615547866733_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=3635dc&_nc_ohc=RIuzDzJxH1sAX-xrHfR&_nc_ht=scontent-lhr6-2.xx&oh=00_AfBJ3urwcFT_lb2gsjcYsMjmkXr_OoRcDnDkNyLAiw9zZQ&oe=6573604A",
+                imageUrl: "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/280194597_3154007414864156_1070893441785421746_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c42490&_nc_ohc=H93LzGZ6mgwAX9NjeHi&_nc_ht=scontent-lhr8-2.xx&oh=00_AfDczrKVSgGWVZMKlnvjqkPNz3Yz3VQPolcZ98eDOTFg5w&oe=657F2D67",
                 instructor: "Кирил Илиев",
                 groups: [
                     "0a272c58-b7ea-4e09-a000-7ec988248f66",
