@@ -13,7 +13,7 @@ import { useStudio } from '../../../contexts/studioContext';
 
 export default function StudioDetails({ }) {
     const navigate = useNavigate();
-    const { isAdmin } = useContext(AuthContext);
+    const { isAdmin, userId } = useContext(AuthContext);
     const [studio, setStudio] = useState({});
     const [groups, setGroups] = useState([]);
     const { studioId } = useParams();
@@ -42,6 +42,31 @@ export default function StudioDetails({ }) {
         setStudioFunk(studioId);
         navigate(Path.CreateGroup);
     }
+    const [likedGroups, setLikedGroups] = useState(() => {
+        return groups.reduce((acc, group) => {
+            if(group.likes.includes(userId)){
+                acc.push(group._id);
+            }
+            return acc;
+        }, [])
+        
+    });
+    
+
+    const likesClickHandler = (group) => {
+
+        if(group._ownerId === userId ){
+            return;
+        }
+
+        if (!group.likes.includes(userId)) {
+            setLikedGroups((prevGroupLikes) => [
+                ...prevGroupLikes, group._id
+            ]);
+            group.likes.push(userId);
+        }
+    }
+
 
     return (
         <div className={styles.main}>
@@ -73,10 +98,8 @@ export default function StudioDetails({ }) {
             <div className={styles.cards}>
                 {groups.map(group => (
 
-
-
-                    <div className={styles.card} key={group._id}>
-                        <img className={styles.cardImg} src={group.imageUrl} alt="logo" />
+                    <div className={styles.card} key={group._id} >
+                        <img className={styles.cardImg} src={group.imageUrl} alt="img" />
                         <div >
                             <h2 className={styles.cardH2}>
                                 {group.name}
@@ -105,12 +128,25 @@ export default function StudioDetails({ }) {
                                         <i className="fa-solid fa-arrow-right"></i>
                                     </span>
                                 </Link>
-                                <Link to='#' className={styles.btn}>
-                                    Харесай
+
+                                <button className={styles.btnLike} disabled={!userId} onClick={(e) => {
+                                    e.preventDefault;
+                                    likesClickHandler(group)
+                                }} >
+                                    
+                                    {(likedGroups.includes(group._id) || group._ownerId === userId) && (
+                                        <span>{group.likes.length}</span>
+                                    )}
+                                    {(!likedGroups.includes(group._id) && group._ownerId !== userId)&& (
+                                        <span>Харесай</span>
+                                    )}
+
+
                                     <span className={styles.materialSymbolsOutlined}>
                                         <i className="fa-solid fa-heart"></i>
                                     </span>
-                                </Link>
+                                </button>
+
                             </div>
 
                             {/* <Link className={styles.btnEdit} to='#'>Харесай</Link> */}

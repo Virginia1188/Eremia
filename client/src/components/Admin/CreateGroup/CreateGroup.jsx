@@ -91,7 +91,7 @@ export default function CreateGroup() {
         }
     }
 
-    const instructorValidator = () => {
+    const createdValidator = () => {
         const regex = /^[a-zA-Z0-9\s\-_,.]+$/;
         if (!regex.test(values[registerFormKeys.Created])) {
             setErrors(state => ({
@@ -108,8 +108,8 @@ export default function CreateGroup() {
     const isButtonDisabled =
         errors.name ||
         errors.image ||
-        errors.address ||
-        errors.instructor ;
+        errors.dances ||
+        errors.created ;
 
     return (
 
@@ -181,7 +181,7 @@ export default function CreateGroup() {
                         id="created"
                         placeholder="Създадена"
                         name="created"
-                        onBlur={instructorValidator}
+                        onBlur={createdValidator}
                         onChange={onChange}
                         values={values[registerFormKeys.Created]}
                     />

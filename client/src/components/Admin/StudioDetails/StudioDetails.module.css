@@ -56,6 +56,7 @@ h4 {
     
 }
 
+
 .studioDetails {
     text-align: center;
     padding: 1em;
@@ -79,6 +80,7 @@ h4 {
 }
 
 
+
 .card {
     width: 16rem;
     height: 25rem;
@@ -100,6 +102,17 @@ h4 {
         left: 0;
         opacity: 0.9;
         transition: opacity .2s ease-out;
+    }
+
+    .btnLike{
+        width: 100%;
+        border-radius: 30px;
+        padding: 2px 15px;
+        font-size: 15px;
+        font-weight: bold;
+        background: linear-gradient(to top right,   #fa92b5, #df68c3, #81c2eb, #5ccddf, #53ca93, #d3e597, #ffe970, #f9b48e, rgb(241, 58, 82));
+        color: black;
+        margin-top: 5px;
     }
 
     /* .divH2{
