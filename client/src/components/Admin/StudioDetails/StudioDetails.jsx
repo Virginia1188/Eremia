@@ -46,33 +46,37 @@ export default function StudioDetails({ }) {
     return (
         <div className={styles.main}>
 
-            <h2 className={styles.titleStudios} >Зала {studio.name}</h2>
-            <div className={styles.studioDetails}>
-                <p><b>Адрес: </b> {studio.address}</p>
-                <span><b>Ръководител:</b> {studio.instructor}</span>
+            <div className={styles.details}>
+                <h2 className={styles.titleStudios} >Зала {studio.name}</h2>
+                <div className={styles.studioDetails}>
+                    <p><b>Адрес: </b> {studio.address}</p>
+                    <span><b>Ръководител:</b> {studio.instructor}</span>
+                </div>
+                {isAdmin && (
+                    <div className={styles.adminBtns}>
+                        <button className={styles.deleteBtn} onClick={deleteClickHandler}>Премахни Зала {studio.name}</button>
+                        <button className={styles.addBtn} onClick={addClickHandler}>Добави нова група</button>
+                    </div>
+                )}
+
+                {groups.length > 0 && (
+                    <h4>Групи в зала {studio.name}</h4>
+                )}
+
+                {/* TODO add schedule */}
+                {groups.length <= 0 && (
+                    <h4>Няма добавени групи в зала {studio.name}</h4>
+                )}
             </div>
-            {isAdmin && (
-                <div className={styles.adminBtns}>
-                <button className={styles.deleteBtn} onClick={deleteClickHandler}>Премахни Зала {studio.name}</button>
-                <button className={styles.addBtn} onClick={addClickHandler}>Добави нова група</button>
-            </div>
-            )}
-            
-            {groups.length > 0 && (
-                <h4>Групи в зала {studio.name}</h4>
-            )}
 
 
-            {/* TODO add schedule */}
-            {groups.length <= 0 && (
-                <h4>Няма добавени групи в зала {studio.name}</h4>
-            )}
-            {groups.map(group => (
-                <div className={styles.cards} key={group._id}>
+            <div className={styles.cards}>
+                {groups.map(group => (
+
 
 
                     <div className={styles.card} key={group._id}>
-                        <img className={styles.cardImg} src='https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/384220642_705558081613582_1456725998677837583_n.jpg?stp=c52.0.206.206a_dst-jpg_p206x206&_nc_cat=111&ccb=1-7&_nc_sid=3d9721&_nc_ohc=CxfqeDrdzC8AX8TRgzM&_nc_ht=scontent-lhr8-1.xx&oh=00_AfCAcVS0V0HDVMAIqwl6JIpudgl4pcHlCmv69fdHKm1aIw&oe=657380F4' alt="logo" />
+                        <img className={styles.cardImg} src={group.imageUrl} alt="logo" />
                         <div >
                             <h2 className={styles.cardH2}>
                                 {group.name}
@@ -116,9 +120,9 @@ export default function StudioDetails({ }) {
                     </div>
 
 
-                </div>
-            ))}
 
+                ))}
+            </div>
 
 
         </div>

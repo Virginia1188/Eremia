@@ -48,20 +48,20 @@ export default function CreateGroup() {
 
     })
 
-    const imgValidator = () => {
-        const regex = /\.(jpeg|jpg|gif|png|bmp)$/;
+    // const imgValidator = () => {
+    //     const regex = /\.(jpeg|jpg|gif|png|bmp)$/;
 
-        if (!regex.test(values[registerFormKeys.Image])) {
-            setErrors(state => ({
-                ...state,
-                image: 'Please enter a valid image URL (JPEG, JPG, GIF, PNG, BMP).',
-            }));
-        } else {
-            if (errors.image) {
-                setErrors(state => ({ ...state, image: '' }));
-            }
-        }
-    }
+    //     if (!regex.test(values[registerFormKeys.Image])) {
+    //         setErrors(state => ({
+    //             ...state,
+    //             image: 'Please enter a valid image URL (JPEG, JPG, GIF, PNG, BMP).',
+    //         }));
+    //     } else {
+    //         if (errors.image) {
+    //             setErrors(state => ({ ...state, image: '' }));
+    //         }
+    //     }
+    // }
 
     const nameValidator = () => {
         const regex = /^.{3,}$/;
@@ -145,7 +145,7 @@ export default function CreateGroup() {
                         id="image"
                         placeholder="Снимка"
                         name="imageUrl"
-                        onMouseLeave={imgValidator}
+                        // onMouseLeave={imgValidator}
                         onChange={onChange}
                         values={values[registerFormKeys.Image]}
                     />
