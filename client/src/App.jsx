@@ -19,6 +19,8 @@ import StudioDetails from './components/Admin/StudioDetails/StudioDetails';
 import CreateGroup from './components/Admin/CreateGroup/CreateGroup';
 import { StudioProvider } from './contexts/studioContext';
 import NotFound from './components/NotFound/NotFound';
+import AuthGuard from './guards/AuthGuard';
+import AdminAuthGuard from './guards/AdminAuthGuard';
 
 function App() {
 
@@ -36,15 +38,26 @@ function App() {
             <Route path='/schedule' element={<Schedule />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/logout' element={<Logout />} />
 
-            <Route path={Path.CreateStudio} element={<CreateStudio />} />
-            <Route path={Path.EditStudio} element={<EditStudio />} />
-            <Route path={Path.StudioDetails} element={<StudioDetails />} />
 
-            <Route path={Path.CreateGroup} element={<CreateGroup />} />
+
+            <Route element={<AuthGuard />} >
+
+              <Route path={Path.StudioDetails} element={<StudioDetails />} />
+              <Route path='/logout' element={<Logout />} />
+
+            </Route>
+
+            <Route element={<AdminAuthGuard />} >
+
+              <Route path={Path.CreateStudio} element={<CreateStudio />} />
+              <Route path={Path.EditStudio} element={<EditStudio />} />
+              <Route path={Path.CreateGroup} element={<CreateGroup />} />
+              
+            </Route>
 
             <Route path="*" element={<NotFound />} />
+
 
           </Routes>
           <Footer />
