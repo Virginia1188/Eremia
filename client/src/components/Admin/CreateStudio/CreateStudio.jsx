@@ -7,7 +7,7 @@ import useFormAuth from '../../../hooks/useFormAuth';
 import * as studioService from '../../../services/studioService';
 import { useNavigate } from 'react-router-dom';
 import Path from '../../../paths';
-import {Error} from '../../Error/Error';
+import Error from '../../Error/Error';
 
 
 export default function CreateStudio() {
@@ -31,7 +31,10 @@ export default function CreateStudio() {
             console.log(values);
             navigate(Path.Studios);
         } catch (error) {
-            setErrors(error);
+            setErrors(state => ({
+                ...state,
+                serverError: error.message,
+            }));
         }
     }
 
@@ -116,8 +119,8 @@ export default function CreateStudio() {
                     <img src="public/img/logo_red.png" alt="logo" />
                     <h5>Добави нова зала</h5>
                 </div>
-                {errors && (
-                    <Error type='error' message={errors.message}/>
+                {errors.serverError && (
+                    <Error type='error' message={errors.serverError}/>
                 ) }
                 <div className={styles.formGroup}>
                     <input type="text"
@@ -127,7 +130,7 @@ export default function CreateStudio() {
                         name="name"
                         onBlur={nameValidator}
                         onChange={onChange}
-                        values={values[registerFormKeys.Name]}
+                        value={values[registerFormKeys.Name]}
                     />
                 </div>
                 {errors.name && (

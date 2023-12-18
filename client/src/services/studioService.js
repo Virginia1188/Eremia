@@ -9,6 +9,9 @@ export const getAll = async () => {
 
 
 export const create = async (studioData) => {
+    if(studioData.name === ''){
+        throw new Error('Please fill the empty fields!');
+    }
     const result = await request.post(baseUrl, studioData);
 
     return result;

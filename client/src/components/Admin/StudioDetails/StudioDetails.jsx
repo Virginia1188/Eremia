@@ -42,20 +42,21 @@ export default function StudioDetails({ }) {
         setStudioFunk(studioId);
         navigate(Path.CreateGroup);
     }
+
     const [likedGroups, setLikedGroups] = useState(() => {
         return groups.reduce((acc, group) => {
-            if(group.likes.includes(userId)){
+            if (group.likes.includes(userId)) {
                 acc.push(group._id);
             }
             return acc;
         }, [])
-        
+
     });
-    
 
-    const likesClickHandler = (group) => {
 
-        if(group._ownerId === userId ){
+    const favoriteClickHandler = (group) => {
+
+        if (group._ownerId === userId) {
             return;
         }
 
@@ -65,7 +66,20 @@ export default function StudioDetails({ }) {
             ]);
             group.likes.push(userId);
         }
+        groupService.updateProperty(group._id, 'likes', group.likes);
+
+
+
+        if (likedGroups.includes(group._id) || group._ownerId === userId || userId === undefined) {
+            showLikes = true;
+        }
+
+        if (!likedGroups.includes(group._id) || group._ownerId !== userId || userId !== undefined) {
+            showLikes = false;
+        }
     }
+
+
 
 
     return (
@@ -133,13 +147,10 @@ export default function StudioDetails({ }) {
                                     e.preventDefault;
                                     likesClickHandler(group)
                                 }} >
-                                    
-                                    {(likedGroups.includes(group._id) || group._ownerId === userId) && (
-                                        <span>{group.likes.length}</span>
-                                    )}
-                                    {(!likedGroups.includes(group._id) && group._ownerId !== userId)&& (
-                                        <span>Харесай</span>
-                                    )}
+
+
+                                    <span>Добави в любими</span>
+
 
 
                                     <span className={styles.materialSymbolsOutlined}>

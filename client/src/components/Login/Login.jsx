@@ -14,7 +14,6 @@ const LoginFormKeys = {
 export default function Login() {
     const { loginSubmitHandler, error } = useContext(AuthContext);
 
-    console.log(error);
 
     const { values, onChange, onSubmit } = useFormAuth(loginSubmitHandler, {
         [LoginFormKeys.Email]: '',
@@ -24,8 +23,7 @@ export default function Login() {
     return (
 
         <div className={styles.registrationForm}>
-
-            {/* <script src="assets/js/script.js"></script> */}
+          
             <form onSubmit={onSubmit}>
 
                 <div className={styles.formIcon}>

@@ -7,6 +7,7 @@ import useForm from '../../../hooks/useForm';
 import * as studioService from '../../../services/studioService';
 import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../../paths';
+import Error from '../../Error/Error';
 
 
 
@@ -30,25 +31,29 @@ export default function EditStudio() {
                 setStudio(result);
             })
             .catch((error) => {
-                console.error("Error fetching studio data", error);
+                setErrors(state => ({
+                    ...state,
+                    serverError: error.message,
+                }));
             })
 
     }, [studioId]);
-    console.log(studio);
+    // console.log(studio);
 
     const editSubmitHandler = async () => {
         try {
             const result = await studioService.edit(studioId, values);
-            console.log(result);
+            // console.log(result);
             navigate(Path.Studios);
         } catch (error) {
-            console.log(error);
+            setErrors(state => ({
+                ...state,
+                serverError: error.message,
+            }));
         }
     };
 
-    function areValuesEqual(obj1, obj2) {
-        return JSON.stringify(obj1) === JSON.stringify(obj2);
-    }
+   
 
     const { values, onChange, onSubmit } = useForm(editSubmitHandler, studio);
 
@@ -119,9 +124,10 @@ export default function EditStudio() {
         <div className={styles.registrationForm}>
             <form onSubmit={onSubmit}>
                 <div className={styles.formIcon}>
-                    <img src="public/img/logo_red.png" alt="logo" />
-                    <h5>Добави нова зала</h5>
+                    <img src="../../../../public/img/logo_red.png" alt="logo" />
+                    <h5>Редактирай зала {values.name}</h5>
                 </div>
+                {errors.serverError && (<Error type='error' message={errors.serverError}/>)}
 
                 <div className={styles.formGroup}>
                     <input 

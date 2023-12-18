@@ -10,8 +10,10 @@ export const getAll = async (studioId) => {
 
 
 export const create = async (groupData, studioId) => {
-    console.log(groupData);
-    console.log(studioId);
+    
+    if(groupData.name === ''){
+        throw new Error('Please fill the empty fields!');
+    }
     const result = await request.post(baseUrl, groupData);
     
 
@@ -20,5 +22,12 @@ export const create = async (groupData, studioId) => {
 
 export const getOne = async (groupId) => {
     const result = await request.get(`${baseUrl}/${groupId}`);
+    return result;
+}
+
+export const updateProperty = async (groupId, property, value) => {
+    const result = await request.patch(`${baseUrl}/${groupId}`, {
+        [property]: value
+    });
     return result;
 }

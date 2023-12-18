@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../../paths';
 import { useStudio } from '../../../contexts/studioContext';
 import { pathToUrl } from '../../../utils/pathToUrl';
+import Error from '../../Error/Error';
 
 
 export default function CreateGroup() {
@@ -24,7 +25,7 @@ export default function CreateGroup() {
     const navigate = useNavigate();
 
     const { userId, isAdmin } = useContext(AuthContext);
-    const {studioId} = useStudio();
+    const { studioId } = useStudio();
     const [errors, setErrors] = useState({});
 
     const createSubmitHandler = async (e) => {
@@ -32,10 +33,12 @@ export default function CreateGroup() {
             const result = await groupService.create(values, studioId);
             navigate(pathToUrl(Path.StudioDetails, { studioId: studioId }));
         } catch (error) {
-            console.log('From Create Group',error);
+            setErrors(state => ({
+                ...state,
+                serverError: error.message,
+            }));
         }
     }
-
     const { values, onChange, onSubmit } = useFormAuth(createSubmitHandler, {
         [registerFormKeys.Name]: '',
         [registerFormKeys.Image]: '',
@@ -47,6 +50,7 @@ export default function CreateGroup() {
         _ownerId: userId,
 
     })
+
 
     // const imgValidator = () => {
     //     const regex = /\.(jpeg|jpg|gif|png|bmp)$/;
@@ -105,11 +109,13 @@ export default function CreateGroup() {
         }
     }
 
+
+console.log(errors);
     const isButtonDisabled =
         errors.name ||
         errors.image ||
         errors.dances ||
-        errors.created ;
+        errors.created;
 
     return (
 
@@ -121,6 +127,9 @@ export default function CreateGroup() {
                     <img src="public/img/logo_red.png" alt="logo" />
                     <h5>Добави нова група</h5>
                 </div>
+
+                {errors.serverError && (<Error type='error' message={errors.serverError}/>)}
+
                 <div className={styles.formGroup}>
                     <input type="text"
                         className="form-control item"
@@ -195,15 +204,15 @@ export default function CreateGroup() {
                 )}
 
                 <div className={styles.formGroup}>
-                    <button 
-                    type="submit" 
-                    className={[styles.createAccount]}
-                    disabled={isButtonDisabled}
+                    <button
+                        type="submit"
+                        className={[styles.createAccount]}
+                        disabled={isButtonDisabled}
                     >
                         Добави нова група</button>
                 </div>
             </form>
-            
+
         </div>
     );
 }

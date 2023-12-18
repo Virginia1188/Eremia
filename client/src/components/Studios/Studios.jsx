@@ -36,12 +36,13 @@ export default function Studios() {
                             <h2 className={styles.cardH2}>
                                 {studio.name}
                             </h2>
-                            <p className={styles.cardP}>
-                                {studio.address} Ръководител: {studio.instructor}
+                            <p className={styles.cardAddress}>
+                                {studio.address}
                             </p>
+                            <p className={styles.cardP}> Ръководител: {studio.instructor}</p>
 
                             <Link to={pathToUrl(Path.StudioDetails, { studioId: studio._id })} className={styles.button}>
-                                Към зала Младост
+                                Към зала {studio.name}
                                 <span className={styles.materialSymbolsOutlined}>
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </span>

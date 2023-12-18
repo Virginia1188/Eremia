@@ -60,6 +60,7 @@
   }
 
   .cardP,
+  .cardAddress,
   .button {
     position: absolute;
     opacity: 0;
@@ -72,9 +73,14 @@
     margin: 0;
     padding: 0;
   }
+  .cardAddress{
+    inset: auto auto 120px 30px;
+    margin: 0;
+    padding: 0;
+  }
 
   .button {
-    inset: auto auto 40px 30px;
+    inset: auto auto 30px 30px;
     color: inherit;
     text-decoration: none;
   }
@@ -118,11 +124,12 @@
     margin-right: 5px;
   }
   &:hover .cardH2 {
-    inset: auto auto 170px 30px;
+    inset: auto auto 185px 30px;
     transition: inset .3s ease-out;
   }
 
   &:hover .cardP,
+  &:hover .cardAddress,
   &:hover .button {
     opacity: 1;
     transition: opacity .5s .1s ease-in;
