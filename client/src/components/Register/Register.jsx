@@ -124,6 +124,21 @@ export default function Register() {
         }
     }
 
+    const adminValidator = () => {
+        const ADMIN_CODE = 'admin_code';
+        if(values[registerFormKeys.AdminPass] !==ADMIN_CODE  && isAdmin){
+            setErrors(state =>({
+                ...state,
+                adminPass: 'Invalin admin password!'
+            }))
+           
+        } else {
+            if (errors.adminPass) {
+                setErrors(state => ({ ...state, adminPass: '' }));
+            }
+        }
+    }
+
     const isButtonDisabled =
         errors.email ||
         errors.password ||
@@ -133,7 +148,7 @@ export default function Register() {
         errors.group ||
         errors.adminPass;
 
-console.log(errors);
+// console.log(errors);
     return (
 
         <div className={styles.registrationForm}>
@@ -259,7 +274,7 @@ console.log(errors);
                             id="adminPass"
                             placeholder="Админ парола"
                             name="adminPass"
-                            onBlur={studioValidator}
+                            onBlur={adminValidator}
                             onChange={onChange}
                             values={values[registerFormKeys.AdminPass]}
                         />
