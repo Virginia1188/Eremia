@@ -43,15 +43,15 @@ export default function StudioDetails({ }) {
         navigate(Path.CreateGroup);
     }
 
-    const [likedGroups, setLikedGroups] = useState(() => {
-        return groups.reduce((acc, group) => {
-            if (group.likes.includes(userId)) {
-                acc.push(group._id);
-            }
-            return acc;
-        }, [])
+    // const [likedGroups, setLikedGroups] = useState(() => {
+    //     return groups.reduce((acc, group) => {
+    //         if (group.likes.includes(userId)) {
+    //             acc.push(group._id);
+    //         }
+    //         return acc;
+    //     }, [])
 
-    });
+    // });
 
 
     const favoriteClickHandler = (group) => {
@@ -60,23 +60,13 @@ export default function StudioDetails({ }) {
             return;
         }
 
-        if (!group.likes.includes(userId)) {
-            setLikedGroups((prevGroupLikes) => [
-                ...prevGroupLikes, group._id
-            ]);
-            group.likes.push(userId);
-        }
-        groupService.updateProperty(group._id, 'likes', group.likes);
-
-
-
-        if (likedGroups.includes(group._id) || group._ownerId === userId || userId === undefined) {
-            showLikes = true;
+        try {
+            
+            
+        } catch (error) {
+            
         }
 
-        if (!likedGroups.includes(group._id) || group._ownerId !== userId || userId !== undefined) {
-            showLikes = false;
-        }
     }
 
 
@@ -145,7 +135,7 @@ export default function StudioDetails({ }) {
 
                                 <button className={styles.btnLike} disabled={!userId} onClick={(e) => {
                                     e.preventDefault;
-                                    likesClickHandler(group)
+                                    favoriteClickHandler(group)
                                 }} >
 
 

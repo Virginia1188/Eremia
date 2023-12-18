@@ -1419,11 +1419,11 @@
         groups: {
             "0a272c58-b7ea-4e09-a000-7ec988248f66": {
                 _ownerId: "7d8826f4-dd45-4e8b-bd69-0b3d5524e648",
-                name: "Great recipe!",
+                name: "Зелена",
                 dances: "80",
                 created: "Януари 2018",
                 danceList: [],
-                likes: [],
+                image: 'https://scontent.fsof9-1.fna.fbcdn.net/v/t39.30808-6/270146903_5406304942729647_111902084211855222_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=G9BrAMed7EoAX9yvkuC&_nc_ht=scontent.fsof9-1.fna&oh=00_AfBwhaQHYrjGlP9Jq8LjAE06hJJwaU2ew6IWrRrnoHjM5A&oe=65868B12',
                 _studioId: "3564027f-adcd-4425-b2c0-1253d2386c0c",
                 _createdOn: 1614260681375,
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
@@ -1445,7 +1445,7 @@
             "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
                 name: "Студенски Град",
                 address: "ул. Академик Стефан Младенов 1",
-                imageUrl: "https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/280194597_3154007414864156_1070893441785421746_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c42490&_nc_ohc=H93LzGZ6mgwAX9NjeHi&_nc_ht=scontent-lhr8-2.xx&oh=00_AfDczrKVSgGWVZMKlnvjqkPNz3Yz3VQPolcZ98eDOTFg5w&oe=657F2D67",
+                imageUrl: "https://scontent.fsof9-1.fna.fbcdn.net/v/t39.30808-6/306484508_5655566877797080_7058723721753415443_n.jpg?stp=cp6_dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=a73e89&_nc_ohc=N3JO0PKxbRIAX-qyuxJ&_nc_ht=scontent.fsof9-1.fna&oh=00_AfBRw0lcEHqs0TzSQUntmS91HoiusqjBLfaVuP7JApzT_Q&oe=6584CCC0",
                 instructor: "Кирил Илиев",
                 groups: [
                     "0a272c58-b7ea-4e09-a000-7ec988248f66",

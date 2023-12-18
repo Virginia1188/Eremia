@@ -116,7 +116,7 @@ export default function CreateStudio() {
             <form onSubmit={onSubmit}>
 
                 <div className={styles.formIcon}>
-                    <img src="public/img/logo_red.png" alt="logo" />
+                    <img src="../../../../public/img/logo_red.png" alt="logo" />
                     <h5>Добави нова зала</h5>
                 </div>
                 {errors.serverError && (
