@@ -1,4 +1,4 @@
-const server = require('./server')
+const server = require('./server');
 
 /**
  * Import function triggers from their respective submodules:
