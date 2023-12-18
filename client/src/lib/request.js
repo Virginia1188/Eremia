@@ -25,7 +25,7 @@ const buildOptions = (data, isAdmin) => {
             'X-Authorization': token
         }
     }
-    console.log('from requester', options);
+    // console.log('from requester', options);
     return options;
 }
 
@@ -41,13 +41,13 @@ export const request = async (method, url, data) => {
     }
 
     const result = await response.json();
-    console.log(result );
+    // console.log(result );
 
     if (!response.ok) {
         console.log('from requester', result);
         throw result;
     }
-    console.log('from requester', result);
+    // console.log('from requester', result);
     return result;
 }
 

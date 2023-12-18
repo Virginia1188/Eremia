@@ -15,7 +15,7 @@ export const AuthProvider = ({
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
 
-    const [error, setError] = useState();
+    const [error, setError] = useState('');
 
 
     const loginSubmitHandler = async (values) => {
@@ -27,12 +27,9 @@ export const AuthProvider = ({
             localStorage.setItem('accessToken', result.accessToken);
             navigate(Path.Home);
         } catch (error) {
-            setError(error.message)
-            // console.log(error.message);
-            return error.message
+            setError(error.message);
+            return error.message;
         }
-
- 
     }
 
 
@@ -42,35 +39,38 @@ export const AuthProvider = ({
     }
 
 
-    const registerSubmitHandler = async (values,errors) => {
-        if(values.adminPass !== ''){
-            if( values.adminPass !== ADMIN_CODE){
-                alert('Invalid verification code. Admin registration not allowed.');
-                return;
-            }
+    const registerSubmitHandler = async (values) => {
 
-            if(values.adminPass === ADMIN_CODE){
-                values.admin = true;
-    
-            }
+
+        if (values.adminPass === ADMIN_CODE) {
+            values.admin = true;
+
         }
 
- 
-        const result = await authService.register(
-            values.email,
-            values.password,
-            values.name,
-            values.surname,
-            values.studio,
-            values.admin,
-        );
 
 
-        setAuth(result);
-        localStorage.setItem('accessToken', result.accessToken);
-        navigate(Path.Home);
+        try {
+            const result = await authService.register(
+                values.email,
+                values.password,
+                values.name,
+                values.surname,
+                values.studio,
+                values.admin,
+            );
+
+
+            setAuth(result);
+            localStorage.setItem('accessToken', result.accessToken);
+            navigate(Path.Home);
+        } catch (error) {
+            setError(error.message)
+            return error.message;
+        }
+
+
     }
-
+    // console.log(error);
 
     const values = {
         loginSubmitHandler,
@@ -79,10 +79,9 @@ export const AuthProvider = ({
         email: auth.email,
         name: auth.name,
         userId: auth._id,
-
         isAuthenticated: !!auth.accessToken,
         isAdmin: !!auth.admin,
-        error,
+        error: error,
 
     }
 
