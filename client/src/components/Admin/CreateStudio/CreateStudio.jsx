@@ -7,6 +7,7 @@ import useFormAuth from '../../../hooks/useFormAuth';
 import * as studioService from '../../../services/studioService';
 import { useNavigate } from 'react-router-dom';
 import Path from '../../../paths';
+import {Error} from '../../Error/Error';
 
 
 export default function CreateStudio() {
@@ -30,7 +31,7 @@ export default function CreateStudio() {
             console.log(values);
             navigate(Path.Studios);
         } catch (error) {
-            console.log(error);
+            setErrors(error);
         }
     }
 
@@ -115,6 +116,9 @@ export default function CreateStudio() {
                     <img src="public/img/logo_red.png" alt="logo" />
                     <h5>Добави нова зала</h5>
                 </div>
+                {errors && (
+                    <Error type='error' message={errors.message}/>
+                ) }
                 <div className={styles.formGroup}>
                     <input type="text"
                         className="form-control item"
