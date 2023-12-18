@@ -6,9 +6,9 @@ export default function AdminAuthGuard(props) {
     const { isAdmin } = useContext(AuthContext);
 
 
-    if (!isAdmin) {
+    if (isAdmin === false) {
 
-        alert('Please login as admin for access!');
+        
         return <Navigate to="/" />;;
 
     }
