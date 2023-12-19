@@ -47,7 +47,7 @@ export const request = async (method, url, data) => {
         console.log('from requester', result);
         throw result;
     }
-    // console.log('from requester', result);
+    console.log('from requester', result);
     return result;
 }
 

@@ -41,7 +41,6 @@ export const AuthProvider = ({
 
     const registerSubmitHandler = async (values) => {
 
-
         if (values.adminPass === ADMIN_CODE) {
             values.admin = true;
 
